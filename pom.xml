@@ -18,5 +18,11 @@
             <version>8.0.30</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.4</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 </project>
