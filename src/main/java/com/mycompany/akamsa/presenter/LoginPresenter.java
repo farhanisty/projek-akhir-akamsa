@@ -4,6 +4,7 @@
  */
 package com.mycompany.akamsa.presenter;
 
+import com.mycompany.akamsa.controller.PageController;
 import com.mycompany.akamsa.entity.User;
 import com.mycompany.akamsa.exception.EntityNotFoundException;
 import com.mycompany.akamsa.exception.RepositoryException;
@@ -18,10 +19,12 @@ import com.mycompany.akamsa.view.auth.LoginView;
 public class LoginPresenter {
     private LoginView loginView;
     private UserRepository userRepository;
+    private PageController pageController;
 
-    public LoginPresenter(LoginView loginView, UserRepository userRepository) {
+    public LoginPresenter(LoginView loginView, UserRepository userRepository, PageController pageController) {
         this.loginView = loginView;
         this.userRepository = userRepository;
+        this.pageController = pageController;
         
         this.initListener();
     }
@@ -39,13 +42,15 @@ public class LoginPresenter {
             
             if(PasswordHelper.verifyPassword(password, user.getPassword())) {
                 this.loginView.showMessage("Login Berhasil");
+                this.loginView.close();
+                this.pageController.showSignUp();
             } else {
                 throw new EntityNotFoundException("username or password not match credentials", new Throwable());
             }
         } catch(EntityNotFoundException e) {
             this.loginView.showMessage(e.getMessage());
         } catch(RepositoryException e) {
-            this.loginView.showMessage("internal server error");
+            this.loginView.showMessage(e.getMessage());
         }
     }
 }

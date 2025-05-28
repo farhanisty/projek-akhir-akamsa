@@ -12,12 +12,14 @@ import java.awt.event.ActionListener;
  */
 public interface LoginView {
     public String getUsernameInput();
-    public void setUsernameInput();
+    public void setUsernameInput(String username);
     
     public String getPasswordInput();
-    public void setPasswordInput();
+    public void setPasswordInput(String password);
     
     public void addLoginListener(ActionListener listener);
+    
+    public void addSignUpListener(ActionListener listener);
     
     public void showMessage(String meessage);
     
