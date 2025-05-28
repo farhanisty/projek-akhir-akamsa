@@ -23,4 +23,6 @@ public interface UserRepository {
     public boolean update(User user) throws RepositoryException;
     
     public boolean delete(int id) throws RepositoryException;
+    
+    public User getByUsername(String username) throws RepositoryException;
 }
