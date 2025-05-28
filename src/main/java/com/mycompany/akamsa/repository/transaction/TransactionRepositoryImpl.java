@@ -5,7 +5,7 @@
 package com.mycompany.akamsa.repository.transaction;
 
 import com.mycompany.akamsa.entity.Transaction;
-import com.mycompany.akamsa.repository.RepositoryException;
+import com.mycompany.akamsa.exception.RepositoryException;
 import java.util.List;
 
 /**

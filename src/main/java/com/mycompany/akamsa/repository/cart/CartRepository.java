@@ -4,10 +4,22 @@
  */
 package com.mycompany.akamsa.repository.cart;
 
+import com.mycompany.akamsa.entity.Cart;
+import com.mycompany.akamsa.exception.RepositoryException;
+import java.util.List;
+
 /**
  *
  * @author farhannivta
  */
 public interface CartRepository {
+    public boolean insert(Cart cart) throws RepositoryException;
     
+    public List<Cart> getAll() throws RepositoryException;
+    
+    public Cart getById(int id) throws RepositoryException;
+    
+    public boolean update(Cart cart) throws RepositoryException;
+    
+    public boolean delete(int id) throws RepositoryException;
 }

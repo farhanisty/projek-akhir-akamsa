@@ -5,7 +5,7 @@
 package com.mycompany.akamsa.repository.cart;
 
 import com.mycompany.akamsa.entity.Cart;
-import com.mycompany.akamsa.repository.RepositoryException;
+import com.mycompany.akamsa.exception.RepositoryException;
 import java.util.List;
 
 /**

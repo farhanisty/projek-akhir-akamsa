@@ -5,7 +5,7 @@
 package com.mycompany.akamsa.repository.user;
 
 import com.mycompany.akamsa.entity.User;
-import com.mycompany.akamsa.repository.RepositoryException;
+import com.mycompany.akamsa.exception.RepositoryException;
 import java.util.List;
 
 /**
