@@ -189,4 +189,46 @@ public class UserRepositoryImpl implements UserRepository {
         
         return result;
     }
+
+    @Override
+    public User getByUsername(String username) throws RepositoryException {
+        PreparedStatement st = null;
+        User user = new User();
+        
+        String sql = "SELECT * FROM " + this.tableName + " WHERE username = ?";
+
+        
+        try {
+            st = Connector.getConnection().prepareStatement(sql);
+            
+            st.setString(1, username);
+            
+            ResultSet rs = st.executeQuery();
+            
+            if(rs.next()) {
+                user.setId(rs.getInt("id"));
+                user.setUsername(rs.getString("username"));
+                user.setName(rs.getString("name"));
+                user.setPassword(rs.getString("password"));
+                user.setIsAdmin(rs.getBoolean("is_admin"));
+                user.setIsVerified(rs.getBoolean("is_verified"));
+                user.setUpdatedAt(rs.getString("updated_at"));
+                user.setCreatedAt(rs.getString("created_at"));
+            } else {
+                throw new EntityNotFoundException("id not found", new Throwable());
+            }
+        } catch(SQLException e) {
+            throw new RepositoryException(e.getMessage(), e);
+        } finally {
+            try {
+                st.close();
+            } catch(SQLException e) {
+                throw new RepositoryException(e.getMessage(), e);
+            }
+        }
+        
+        return user;
+    }
+    
+    
 }
