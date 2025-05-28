@@ -20,7 +20,7 @@ public class UserRepositoryImpl implements UserRepository {
     private String tableName = "user";
 
     @Override
-    public boolean insert(User user) throws RepositoryException {
+    public boolean insert(User user) throws RepositoryException, DuplicateEntryException {
         PreparedStatement st = null;
         boolean result = false;
         
