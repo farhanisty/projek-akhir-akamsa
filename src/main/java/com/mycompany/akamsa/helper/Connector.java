@@ -25,11 +25,9 @@ public class Connector {
             datasource.setPassword(Database.password);
             datasource.setDatabaseName(Database.name);
             
-            try {
-                Connector.connection = datasource.getConnection();
-            } catch(SQLException e) {
-                throw e;
-            }
+
+            Connector.connection = datasource.getConnection();
+
         }
         
         return Connector.connection;
