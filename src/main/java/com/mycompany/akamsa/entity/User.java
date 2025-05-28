@@ -39,7 +39,7 @@ public class User extends AbstractEntity {
         this.password = password;
     }
 
-    public boolean isIsAdmin() {
+    public boolean getIsAdmin() {
         return isAdmin;
     }
 
@@ -47,7 +47,7 @@ public class User extends AbstractEntity {
         this.isAdmin = isAdmin;
     }
 
-    public boolean isIsVerified() {
+    public boolean getIsVerified() {
         return isVerified;
     }
 
