@@ -33,11 +33,11 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
         jLabelSignIn = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        passwordTextField1 = new javax.swing.JPasswordField();
+        confirmPasswordTextField = new javax.swing.JPasswordField();
         passwordTextField = new javax.swing.JPasswordField();
-        jTextField1 = new javax.swing.JTextField();
+        nameTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        usernameTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         signUpButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -62,13 +62,13 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LogoBig.png"))); // NOI18N
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        passwordTextField1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        passwordTextField1.addActionListener(new java.awt.event.ActionListener() {
+        confirmPasswordTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        confirmPasswordTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordTextField1ActionPerformed(evt);
+                confirmPasswordTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(passwordTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 320, -1));
+        getContentPane().add(confirmPasswordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 320, -1));
 
         passwordTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         passwordTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -78,8 +78,8 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
         });
         getContentPane().add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 320, -1));
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nameTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        nameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameTextFieldActionPerformed(evt);
             }
@@ -87,15 +87,13 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
         getContentPane().add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 320, -1));
 
         jLabel2.setFont(new java.awt.Font("Cooper Black", 0, 62)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Sign Up");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, -1, -1));
 
-        jTextField2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 320, -1));
+        usernameTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        getContentPane().add(usernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 320, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Name");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, -1, -1));
 
@@ -111,22 +109,18 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
         getContentPane().add(signUpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 470, 320, 40));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Username");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Or");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Confirm Password");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Password");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, -1, -1));
 
@@ -149,9 +143,9 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordTextFieldActionPerformed
 
-    private void passwordTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextField1ActionPerformed
+    private void confirmPasswordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmPasswordTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordTextField1ActionPerformed
+    }//GEN-LAST:event_confirmPasswordTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,8 +198,7 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JTextField confirmPasswordTextField;
+    private javax.swing.JPasswordField confirmPasswordTextField;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -216,10 +209,10 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelSignIn;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField nameTextField;
     private javax.swing.JPasswordField passwordTextField;
-    private javax.swing.JPasswordField passwordTextField1;
+    private javax.swing.JButton signUpButton;
+    private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 
     @Override
