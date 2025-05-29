@@ -30,7 +30,7 @@ public class LoginPresenter {
     }
     
     private void initListener() {
-        this.loginView.addLoginListener(e -> this.onLogin());
+        this.loginView.addLoginListener(() -> this.onLogin());
     }
     
     private void onLogin() {

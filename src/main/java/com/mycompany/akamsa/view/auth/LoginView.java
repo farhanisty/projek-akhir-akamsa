@@ -4,6 +4,7 @@
  */
 package com.mycompany.akamsa.view.auth;
 
+import com.mycompany.akamsa.common.ClickListener;
 import java.awt.event.ActionListener;
 
 /**
@@ -17,9 +18,9 @@ public interface LoginView {
     public String getPasswordInput();
     public void setPasswordInput(String password);
     
-    public void addLoginListener(ActionListener listener);
+    public void addLoginListener(ClickListener listener);
     
-    public void addSignUpListener(ActionListener listener);
+    public void addSignUpListener(ClickListener listener);
     
     public void showMessage(String meessage);
     
