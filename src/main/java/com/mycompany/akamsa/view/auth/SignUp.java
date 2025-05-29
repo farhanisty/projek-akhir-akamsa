@@ -4,11 +4,14 @@
  */
 package com.mycompany.akamsa.view.auth;
 
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ASUS
  */
-public class SignUp extends javax.swing.JFrame {
+public class SignUp extends javax.swing.JFrame implements SignUpView {
 
     /**
      * Creates new form MainView
@@ -28,18 +31,18 @@ public class SignUp extends javax.swing.JFrame {
 
         jLabel11 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        nameTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        usernameTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        signUpButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        passwordTextField = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        confirmPasswordTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,13 +56,13 @@ public class SignUp extends javax.swing.JFrame {
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LogoBig.png"))); // NOI18N
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nameTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        nameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nameTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 320, -1));
+        getContentPane().add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 320, -1));
 
         jLabel2.setFont(new java.awt.Font("Cooper Black", 0, 62)); // NOI18N
         jLabel2.setText("Sign Up");
@@ -70,23 +73,23 @@ public class SignUp extends javax.swing.JFrame {
         jLabel4.setText("Sign In");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, -1, -1));
 
-        jTextField2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 320, -1));
+        usernameTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        getContentPane().add(usernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 320, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel5.setText("Name");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(4, 120, 96));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Sign Up");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        signUpButton.setBackground(new java.awt.Color(4, 120, 96));
+        signUpButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        signUpButton.setForeground(new java.awt.Color(255, 255, 255));
+        signUpButton.setText("Sign Up");
+        signUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                signUpButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 470, 320, 40));
+        getContentPane().add(signUpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 470, 320, 40));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel6.setText("Username");
@@ -100,20 +103,20 @@ public class SignUp extends javax.swing.JFrame {
         jLabel8.setText("Password");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, -1, -1));
 
-        jTextField3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 320, -1));
+        passwordTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        getContentPane().add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 320, -1));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel9.setText("Confirm Password");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, -1, -1));
 
-        jTextField4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        confirmPasswordTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        confirmPasswordTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                confirmPasswordTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 320, -1));
+        getContentPane().add(confirmPasswordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 320, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Login.jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -122,17 +125,17 @@ public class SignUp extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nameTextFieldActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_signUpButtonActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void confirmPasswordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmPasswordTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_confirmPasswordTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,7 +188,7 @@ public class SignUp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField confirmPasswordTextField;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -196,9 +199,64 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField nameTextField;
+    private javax.swing.JTextField passwordTextField;
+    private javax.swing.JButton signUpButton;
+    private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public String getUsernameInput() {
+        return this.usernameTextField.getText();
+    }
+
+    @Override
+    public void setUsernameInput(String username) {
+        this.usernameTextField.setText(username);
+    }
+
+    @Override
+    public String getNameInput() {
+        return this.nameTextField.getText();
+    }
+
+    @Override
+    public void setNameInput(String name) {
+        this.nameTextField.setText(name);
+    }
+
+    @Override
+    public String getPasswordInput() {
+        return this.passwordTextField.getText();
+    }
+
+    @Override
+    public void setPasswordInput(String password) {
+        this.passwordTextField.setText(password);
+    }
+
+    @Override
+    public String getConfirmPasswordInput() {
+        return this.confirmPasswordTextField.getText();
+    }
+
+    @Override
+    public void setConfirmPasswordInput(String password) {
+        this.confirmPasswordTextField.setText(password);
+    }
+
+    @Override
+    public void addSignUpListener(ActionListener listener) {
+        this.signUpButton.addActionListener(listener);
+    }
+
+    @Override
+    public void showMessage(String message) {
+        JOptionPane.showMessageDialog(this, message);
+    }
+    
+    @Override
+    public void close() {
+        dispose();
+    }
 }
