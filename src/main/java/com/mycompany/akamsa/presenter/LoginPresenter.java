@@ -51,6 +51,9 @@ public class LoginPresenter {
             this.loginView.showMessage(e.getMessage());
         } catch(RepositoryException e) {
             this.loginView.showMessage(e.getMessage());
+        } finally {
+            this.loginView.setPasswordInput("");
+            this.loginView.setUsernameInput("");
         }
     }
 }

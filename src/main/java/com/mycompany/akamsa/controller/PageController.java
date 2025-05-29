@@ -5,6 +5,7 @@
 package com.mycompany.akamsa.controller;
 
 import com.mycompany.akamsa.presenter.LoginPresenter;
+import com.mycompany.akamsa.presenter.SignUpPresenter;
 import com.mycompany.akamsa.repository.user.UserRepository;
 import com.mycompany.akamsa.repository.user.UserRepositoryFactory;
 import com.mycompany.akamsa.view.auth.SignIn;
@@ -31,5 +32,7 @@ public class PageController {
         SignUp signUp = new SignUp();
         
         signUp.setVisible(true);
+        
+        SignUpPresenter signUpPresenter = new SignUpPresenter(signUp, this.userRepository, this);
     }
 }
