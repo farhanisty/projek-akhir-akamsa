@@ -65,15 +65,19 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LogoBig.png"))); // NOI18N
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        confirmPasswordTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        confirmPasswordTextField.addActionListener(new java.awt.event.ActionListener() {
+        passwordTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        passwordTextField1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        passwordTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        passwordTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confirmPasswordTextFieldActionPerformed(evt);
             }
         });
         getContentPane().add(confirmPasswordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 320, -1));
 
+        passwordTextField.setBackground(new java.awt.Color(255, 255, 255));
         passwordTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        passwordTextField.setForeground(new java.awt.Color(0, 0, 0));
         passwordTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordTextFieldActionPerformed(evt);
@@ -81,20 +85,24 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
         });
         getContentPane().add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 320, -1));
 
-        nameTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        nameTextField.addActionListener(new java.awt.event.ActionListener() {
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 320, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 320, -1));
 
         jLabel2.setFont(new java.awt.Font("Cooper Black", 0, 62)); // NOI18N
         jLabel2.setText("Sign Up");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, -1, -1));
 
-        usernameTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        getContentPane().add(usernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 320, -1));
+        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 320, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel5.setText("Name");
@@ -213,9 +221,8 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField nameTextField;
     private javax.swing.JPasswordField passwordTextField;
-    private javax.swing.JLabel signInLabel;
+    private javax.swing.JPasswordField passwordTextField1;
     private javax.swing.JButton signUpButton;
-    private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 
     @Override
