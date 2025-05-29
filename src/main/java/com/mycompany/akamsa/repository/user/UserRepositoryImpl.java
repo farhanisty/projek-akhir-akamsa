@@ -49,7 +49,7 @@ public class UserRepositoryImpl implements UserRepository {
         } finally {
             try {
                 st.close();
-            } catch(SQLException e) {
+            } catch(Exception e) {
                 throw new RepositoryException(e.getMessage(), e);
             }
         }
@@ -119,7 +119,7 @@ public class UserRepositoryImpl implements UserRepository {
         } finally {
             try {
                 st.close();
-            } catch(SQLException e) {
+            } catch(Exception e) {
                 throw new RepositoryException(e.getMessage(), e);
             }
         }
@@ -153,7 +153,7 @@ public class UserRepositoryImpl implements UserRepository {
         } finally {
             try {
                 st.close();
-            } catch(SQLException e) {
+            } catch(Exception e) {
                 throw new RepositoryException(e.getMessage(), e);
             }
         }
@@ -182,7 +182,7 @@ public class UserRepositoryImpl implements UserRepository {
         } finally {
             try {
                 st.close();
-            } catch(SQLException e) {
+            } catch(Exception e) {
                 throw new RepositoryException(e.getMessage(), e);
             }
         }
@@ -222,8 +222,8 @@ public class UserRepositoryImpl implements UserRepository {
         } finally {
             try {
                 st.close();
-            } catch(SQLException e) {
-                throw new RepositoryException(e.getMessage(), e);
+            } catch (Exception e) {
+                throw new RepositoryException("Database Not Connected", e);
             }
         }
         
