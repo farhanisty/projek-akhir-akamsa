@@ -4,11 +4,15 @@
  */
 package com.mycompany.akamsa.view.auth;
 
+import com.mycompany.akamsa.common.ClickListener;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ASUS
  */
-public class SignUp extends javax.swing.JFrame {
+public class SignUp extends javax.swing.JFrame implements SignUpView {
 
     /**
      * Creates new form MainView
@@ -35,7 +39,7 @@ public class SignUp extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        signUpButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -77,10 +81,10 @@ public class SignUp extends javax.swing.JFrame {
         jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nameTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 320, -1));
+        getContentPane().add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 320, -1));
 
         jLabel2.setFont(new java.awt.Font("Cooper Black", 0, 62)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -95,16 +99,16 @@ public class SignUp extends javax.swing.JFrame {
         jLabel5.setText("Name");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(4, 120, 96));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Sign Up");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        signUpButton.setBackground(new java.awt.Color(4, 120, 96));
+        signUpButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        signUpButton.setForeground(new java.awt.Color(255, 255, 255));
+        signUpButton.setText("Sign Up");
+        signUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                signUpButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 470, 320, 40));
+        getContentPane().add(signUpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 470, 320, 40));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
@@ -133,13 +137,13 @@ public class SignUp extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nameTextFieldActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_signUpButtonActionPerformed
 
     private void passwordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextFieldActionPerformed
         // TODO add your handling code here:
@@ -201,6 +205,7 @@ public class SignUp extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JTextField confirmPasswordTextField;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -216,4 +221,59 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JPasswordField passwordTextField1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public String getUsernameInput() {
+        return this.usernameTextField.getText();
+    }
+
+    @Override
+    public void setUsernameInput(String username) {
+        this.usernameTextField.setText(username);
+    }
+
+    @Override
+    public String getNameInput() {
+        return this.nameTextField.getText();
+    }
+
+    @Override
+    public void setNameInput(String name) {
+        this.nameTextField.setText(name);
+    }
+
+    @Override
+    public String getPasswordInput() {
+        return this.passwordTextField.getText();
+    }
+
+    @Override
+    public void setPasswordInput(String password) {
+        this.passwordTextField.setText(password);
+    }
+
+    @Override
+    public String getConfirmPasswordInput() {
+        return this.confirmPasswordTextField.getText();
+    }
+
+    @Override
+    public void setConfirmPasswordInput(String password) {
+        this.confirmPasswordTextField.setText(password);
+    }
+
+    @Override
+    public void addSignUpListener(ClickListener listener) {
+        this.signUpButton.addActionListener((e) -> listener.onClick());
+    }
+
+    @Override
+    public void showMessage(String message) {
+        JOptionPane.showMessageDialog(this, message);
+    }
+    
+    @Override
+    public void close() {
+        dispose();
+    }
 }

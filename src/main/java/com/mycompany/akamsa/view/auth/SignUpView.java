@@ -11,14 +11,18 @@ import java.awt.event.ActionListener;
  *
  * @author farhannivta
  */
-public interface LoginView {
+public interface SignUpView {
     public String getUsernameInput();
     public void setUsernameInput(String username);
+    
+    public String getNameInput();
+    public void setNameInput(String name);
     
     public String getPasswordInput();
     public void setPasswordInput(String password);
     
-    public void addLoginListener(ClickListener listener);
+    public String getConfirmPasswordInput();
+    public void setConfirmPasswordInput(String password);
     
     public void addSignUpListener(ClickListener listener);
     

@@ -30,7 +30,7 @@ public class LoginPresenter {
     }
     
     private void initListener() {
-        this.loginView.addLoginListener(e -> this.onLogin());
+        this.loginView.addLoginListener(() -> this.onLogin());
     }
     
     private void onLogin() {
@@ -51,6 +51,9 @@ public class LoginPresenter {
             this.loginView.showMessage(e.getMessage());
         } catch(RepositoryException e) {
             this.loginView.showMessage(e.getMessage());
+        } finally {
+            this.loginView.setPasswordInput("");
+            this.loginView.setUsernameInput("");
         }
     }
 }
