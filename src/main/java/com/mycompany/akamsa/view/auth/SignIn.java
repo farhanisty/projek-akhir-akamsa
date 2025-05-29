@@ -63,7 +63,9 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
         jLabel2.setText("Sign In");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, -1, -1));
 
+        passwordTextField.setBackground(new java.awt.Color(255, 255, 255));
         passwordTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        passwordTextField.setForeground(new java.awt.Color(0, 0, 0));
         passwordTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordTextFieldActionPerformed(evt);
@@ -71,7 +73,9 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
         });
         getContentPane().add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 320, -1));
 
+        usernameTextField.setBackground(new java.awt.Color(255, 255, 255));
         usernameTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        usernameTextField.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(usernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 320, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
