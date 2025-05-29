@@ -4,6 +4,7 @@
  */
 package com.mycompany.akamsa.view.auth;
 
+import com.mycompany.akamsa.common.ClickListener;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
@@ -142,8 +143,8 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
     }
 
     @Override
-    public void addLoginListener(ActionListener listener) {
-        this.loginButton.addActionListener(listener);
+    public void addLoginListener(ClickListener listener) {
+        this.loginButton.addActionListener((e) -> listener.onClick());
     }
 
     @Override
@@ -157,7 +158,7 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
     }
 
     @Override
-    public void addSignUpListener(ActionListener listener) {
+    public void addSignUpListener(ClickListener listener) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

@@ -4,6 +4,7 @@
  */
 package com.mycompany.akamsa.view.auth;
 
+import com.mycompany.akamsa.common.ClickListener;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
@@ -252,8 +253,8 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
     }
 
     @Override
-    public void addSignUpListener(ActionListener listener) {
-        this.signUpButton.addActionListener(listener);
+    public void addSignUpListener(ClickListener listener) {
+        this.signUpButton.addActionListener((e) -> listener.onClick());
     }
 
     @Override

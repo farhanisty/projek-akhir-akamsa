@@ -36,7 +36,7 @@ public class SignUpPresenter {
     }
     
     private void initListener() {
-        this.signUpView.addSignUpListener(e -> this.onSignUp());
+        this.signUpView.addSignUpListener(() -> this.onSignUp());
     }
     
     private void onSignUp() {
