@@ -11,6 +11,7 @@ import com.mycompany.akamsa.exception.RepositoryException;
 import com.mycompany.akamsa.helper.PasswordHelper;
 import com.mycompany.akamsa.repository.user.UserRepository;
 import com.mycompany.akamsa.view.auth.LoginView;
+import com.mycompany.akamsa.view.ui.LandingPage;
 
 /**
  *
@@ -31,6 +32,7 @@ public class LoginPresenter {
     
     private void initListener() {
         this.loginView.addLoginListener(() -> this.onLogin());
+        this.loginView.addGoToSignUpListener(() -> this.onGoToSignUp());
     }
     
     private void onLogin() {
@@ -43,7 +45,8 @@ public class LoginPresenter {
             if(PasswordHelper.verifyPassword(password, user.getPassword())) {
                 this.loginView.showMessage("Login Berhasil");
                 this.loginView.close();
-                this.pageController.showSignUp();
+                LandingPage landingPage = new LandingPage();
+                landingPage.setVisible(true);
             } else {
                 throw new EntityNotFoundException("username or password not match credentials", new Throwable());
             }
@@ -55,5 +58,10 @@ public class LoginPresenter {
             this.loginView.setPasswordInput("");
             this.loginView.setUsernameInput("");
         }
+    }
+    
+    private void onGoToSignUp() {
+        this.loginView.close();
+        this.pageController.showSignUp();
     }
 }

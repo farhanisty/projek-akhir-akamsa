@@ -37,6 +37,7 @@ public class SignUpPresenter {
     
     private void initListener() {
         this.signUpView.addSignUpListener(() -> this.onSignUp());
+        this.signUpView.addGoToLoginListener(() -> onGoToLogin());
     }
     
     private void onSignUp() {
@@ -76,5 +77,10 @@ public class SignUpPresenter {
         } catch(RepositoryException e) {
             this.signUpView.showMessage(e.getMessage());
         }
+    }
+    
+    private void onGoToLogin() {
+        this.signUpView.close();
+        this.pageController.showLogin();
     }
 }

@@ -5,7 +5,10 @@
 package com.mycompany.akamsa.view.auth;
 
 import com.mycompany.akamsa.common.ClickListener;
+import java.awt.Cursor;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -30,7 +33,7 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelSignIn = new javax.swing.JLabel();
+        signInLabel = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         confirmPasswordTextField = new javax.swing.JPasswordField();
@@ -49,10 +52,10 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelSignIn.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabelSignIn.setForeground(java.awt.SystemColor.textHighlight);
-        jLabelSignIn.setText("Sign In");
-        getContentPane().add(jLabelSignIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, -1, -1));
+        signInLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        signInLabel.setForeground(java.awt.SystemColor.textHighlight);
+        signInLabel.setText("Sign In");
+        getContentPane().add(signInLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -208,9 +211,9 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabelSignIn;
     private javax.swing.JTextField nameTextField;
     private javax.swing.JPasswordField passwordTextField;
+    private javax.swing.JLabel signInLabel;
     private javax.swing.JButton signUpButton;
     private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
@@ -268,5 +271,16 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
     @Override
     public void close() {
         dispose();
+    }
+
+    @Override
+    public void addGoToLoginListener(ClickListener listener) {
+        this.signInLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        this.signInLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                listener.onClick();
+            }
+        });
     }
 }

@@ -20,7 +20,7 @@ public interface LoginView {
     
     public void addLoginListener(ClickListener listener);
     
-    public void addSignUpListener(ClickListener listener);
+    public void addGoToSignUpListener(ClickListener listener);
     
     public void showMessage(String meessage);
     
