@@ -5,7 +5,10 @@
 package com.mycompany.akamsa.view.auth;
 
 import com.mycompany.akamsa.common.ClickListener;
+import java.awt.Cursor;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,7 +35,7 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
 
         jLabel11 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabelSignUp = new javax.swing.JLabel();
+        singUpLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         passwordTextField = new javax.swing.JPasswordField();
         usernameTextField = new javax.swing.JTextField();
@@ -53,13 +56,12 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LogoBig.png"))); // NOI18N
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jLabelSignUp.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabelSignUp.setForeground(java.awt.SystemColor.textHighlight);
-        jLabelSignUp.setText("Sign Up");
-        getContentPane().add(jLabelSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, -1, -1));
+        singUpLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        singUpLabel.setForeground(java.awt.SystemColor.textHighlight);
+        singUpLabel.setText("Sign Up");
+        getContentPane().add(singUpLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Cooper Black", 0, 62)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Sign In");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, -1, -1));
 
@@ -75,7 +77,6 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
         getContentPane().add(usernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 320, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Password");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, -1, -1));
 
@@ -86,12 +87,10 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
         getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, 320, 40));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Username");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Or");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, -1, -1));
 
@@ -115,9 +114,9 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelSignUp;
     private javax.swing.JButton loginButton;
     private javax.swing.JPasswordField passwordTextField;
+    private javax.swing.JLabel singUpLabel;
     private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 
@@ -157,7 +156,13 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
     }
 
     @Override
-    public void addSignUpListener(ClickListener listener) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void addGoToSignUpListener(ClickListener listener) {
+        this.singUpLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        this.singUpLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                listener.onClick();
+            }
+        });
     }
 }

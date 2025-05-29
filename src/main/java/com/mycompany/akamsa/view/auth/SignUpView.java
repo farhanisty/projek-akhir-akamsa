@@ -26,6 +26,8 @@ public interface SignUpView {
     
     public void addSignUpListener(ClickListener listener);
     
+    public void addGoToLoginListener(ClickListener listener);
+    
     public void showMessage(String meessage);
     
     public void close();
