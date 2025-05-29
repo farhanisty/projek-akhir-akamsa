@@ -45,8 +45,8 @@ public class LoginPresenter {
             if(PasswordHelper.verifyPassword(password, user.getPassword())) {
                 this.loginView.showMessage("Login Berhasil");
                 this.loginView.close();
-                LandingPage landingPage = new LandingPage();
-                landingPage.setVisible(true);
+                
+                this.pageController.showCategoryDashboard();
             } else {
                 throw new EntityNotFoundException("username or password not match credentials", new Throwable());
             }

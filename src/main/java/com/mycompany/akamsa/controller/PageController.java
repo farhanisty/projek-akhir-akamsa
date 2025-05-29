@@ -4,12 +4,15 @@
  */
 package com.mycompany.akamsa.controller;
 
+import com.mycompany.akamsa.presenter.CategoryDashboardPresenter;
 import com.mycompany.akamsa.presenter.LoginPresenter;
 import com.mycompany.akamsa.presenter.SignUpPresenter;
 import com.mycompany.akamsa.repository.user.UserRepository;
 import com.mycompany.akamsa.repository.user.UserRepositoryFactory;
+import com.mycompany.akamsa.view.CategoryDashboardView;
 import com.mycompany.akamsa.view.auth.SignIn;
 import com.mycompany.akamsa.view.auth.SignUp;
+import com.mycompany.akamsa.view.ui.SewaKategori;
 
 /**
  *
@@ -34,5 +37,12 @@ public class PageController {
         signUp.setVisible(true);
         
         SignUpPresenter signUpPresenter = new SignUpPresenter(signUp, this.userRepository, this);
+    }
+    
+    public void showCategoryDashboard() {
+        SewaKategori categoryDashboardView = new SewaKategori();
+        categoryDashboardView.setVisible(true);
+        
+        CategoryDashboardPresenter categoryDashboardPresenter = new CategoryDashboardPresenter(categoryDashboardView, this);
     }
 }

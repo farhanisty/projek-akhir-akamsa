@@ -4,11 +4,14 @@
  */
 package com.mycompany.akamsa.view.ui;
 
+import com.mycompany.akamsa.common.ClickListener;
+import com.mycompany.akamsa.view.CategoryDashboardView;
+
 /**
  *
  * @author ASUS
  */
-public class SewaKategori extends javax.swing.JFrame {
+public class SewaKategori extends javax.swing.JFrame implements CategoryDashboardView {
 
     /**
      * Creates new form nitip
@@ -28,12 +31,12 @@ public class SewaKategori extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        toolButton = new javax.swing.JButton();
+        carrierButton = new javax.swing.JButton();
+        navigationButton = new javax.swing.JButton();
+        tendaButton = new javax.swing.JButton();
+        wearsButton = new javax.swing.JButton();
+        lightingButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -49,57 +52,56 @@ public class SewaKategori extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Kategori");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 38, -1, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/KiteriaPeralatan.jpg"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        toolButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/KiteriaPeralatan.jpg"))); // NOI18N
+        toolButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                toolButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 225, 225));
+        jPanel3.add(toolButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 225, 225));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/KriteriaCarrie.jpg"))); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        carrierButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/KriteriaCarrie.jpg"))); // NOI18N
+        carrierButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                carrierButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 225, 225));
+        jPanel3.add(carrierButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 225, 225));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/KriteriaNavigasi.jpg"))); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        navigationButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/KriteriaNavigasi.jpg"))); // NOI18N
+        navigationButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                navigationButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 225, 225));
+        jPanel3.add(navigationButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 225, 225));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/KriteriaTenda.jpg"))); // NOI18N
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        tendaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/KriteriaTenda.jpg"))); // NOI18N
+        tendaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                tendaButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 225, 225));
+        jPanel3.add(tendaButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 225, 225));
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/KriteriaWears.jpg"))); // NOI18N
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        wearsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/KriteriaWears.jpg"))); // NOI18N
+        wearsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                wearsButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 225, 225));
+        jPanel3.add(wearsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 225, 225));
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/KriteriaPencahayaan.jpg"))); // NOI18N
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        lightingButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/KriteriaPencahayaan.jpg"))); // NOI18N
+        lightingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                lightingButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, 225, 225));
+        jPanel3.add(lightingButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, 225, 225));
 
         jPanel2.setBackground(new java.awt.Color(5, 54, 44));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -178,9 +180,9 @@ public class SewaKategori extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void toolButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toolButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_toolButtonActionPerformed
 
     private void btnTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransaksiActionPerformed
         // TODO add your handling code here:
@@ -198,25 +200,25 @@ public class SewaKategori extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTransaksi2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void carrierButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carrierButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_carrierButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void navigationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_navigationButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_navigationButtonActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void tendaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tendaButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_tendaButtonActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void wearsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wearsButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_wearsButtonActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void lightingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lightingButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_lightingButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -322,16 +324,46 @@ public class SewaKategori extends javax.swing.JFrame {
     private javax.swing.JButton btnSewa;
     private javax.swing.JButton btnTransaksi;
     private javax.swing.JButton btnTransaksi2;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton carrierButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton lightingButton;
+    private javax.swing.JButton navigationButton;
+    private javax.swing.JButton tendaButton;
+    private javax.swing.JButton toolButton;
+    private javax.swing.JButton wearsButton;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void addLightingListener(ClickListener listener) {
+        this.lightingButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addTendaListener(ClickListener listener) {
+        this.tendaButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addToolListener(ClickListener listener) {
+        this.toolButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addWearListener(ClickListener listener) {
+        this.wearsButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addCarrierListener(ClickListener listener) {
+        this.carrierButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addNavigationListener(ClickListener listener) {
+        this.navigationButton.addActionListener(e -> listener.onClick());
+    }
 }
