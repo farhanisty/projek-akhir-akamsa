@@ -32,16 +32,15 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
 
         jLabel11 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        passwordTextField = new javax.swing.JTextField();
+        jLabelSignUp = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        signUpLabel = new javax.swing.JLabel();
+        passwordTextField = new javax.swing.JPasswordField();
         usernameTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        btnSignUp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -54,6 +53,16 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LogoBig.png"))); // NOI18N
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        jLabelSignUp.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabelSignUp.setForeground(java.awt.SystemColor.textHighlight);
+        jLabelSignUp.setText("Sign Up");
+        getContentPane().add(jLabelSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Cooper Black", 0, 62)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Sign In");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, -1, -1));
+
         passwordTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         passwordTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,19 +71,11 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
         });
         getContentPane().add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 320, -1));
 
-        jLabel2.setFont(new java.awt.Font("Cooper Black", 0, 62)); // NOI18N
-        jLabel2.setText("Sign In");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, -1, -1));
-
-        signUpLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        signUpLabel.setForeground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
-        signUpLabel.setText("Sign Up");
-        getContentPane().add(signUpLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, -1, -1));
-
         usernameTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         getContentPane().add(usernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 320, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Password");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, -1, -1));
 
@@ -85,18 +86,17 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
         getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, 320, 40));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Username");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Or");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, -1, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Login.jpg"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        btnSignUp.setText("jButton1");
-        getContentPane().add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, 60, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -108,7 +108,6 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSignUp;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
@@ -116,9 +115,9 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelSignUp;
     private javax.swing.JButton loginButton;
-    private javax.swing.JTextField passwordTextField;
-    private javax.swing.JLabel signUpLabel;
+    private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 
