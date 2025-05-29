@@ -6,10 +6,6 @@ package com.mycompany.akamsa;
 
 import com.mycompany.akamsa.config.Database;
 import com.mycompany.akamsa.controller.PageController;
-import com.mycompany.akamsa.presenter.LoginPresenter;
-import com.mycompany.akamsa.repository.user.UserRepository;
-import com.mycompany.akamsa.repository.user.UserRepositoryFactory;
-import com.mycompany.akamsa.view.auth.SignIn;
 
 /**
  *
