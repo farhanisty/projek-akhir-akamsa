@@ -70,6 +70,7 @@ public class Transaksi extends javax.swing.JFrame {
 
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
 
         jButton3.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
         jButton3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
