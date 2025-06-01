@@ -56,7 +56,21 @@ public class CartRepositoryImpl implements CartRepository {
     @Override
     public List<Cart> getAll() throws RepositoryException {
         List<Cart> carts = new ArrayList<>();
-        String sql = "SELECT * FROM " + this.tableName;
+        String sql = """
+                     SELECT 
+                     	c.*,
+                     	i.id as i_id,
+                     	i.name as i_name,
+                     	i.price as i_price,
+                     	i.stock as i_stock,
+                     	i.category as i_category,
+                     	i.image as i_image,
+                     	i.updated_at as i_updated_at,
+                     	i.created_at as i_created_at
+                     FROM cart c
+                     JOIN item i ON i.id = c.item_id
+                     JOIN transaction t ON t.id = c.transaction_id
+                     """;
         
         try {
             Statement st = Connector.getConnection().createStatement();
@@ -77,7 +91,22 @@ public class CartRepositoryImpl implements CartRepository {
         PreparedStatement st = null;
         Cart cart = null;
         
-        String sql = "SELECT * FROM " + this.tableName + " WHERE id = ?";
+        String sql = """
+                    SELECT 
+                        c.*,
+                        i.id as i_id,
+                        i.name as i_name,
+                        i.price as i_price,
+                        i.stock as i_stock,
+                        i.category as i_category,
+                        i.image as i_image,
+                        i.updated_at as i_updated_at,
+                        i.created_at as i_created_at
+                    FROM cart c
+                    JOIN item i ON i.id = c.item_id
+                    JOIN transaction t ON t.id = c.transaction_id
+                    WHERE c.id = ?
+                     """;
 
         
         try {
@@ -179,7 +208,15 @@ public class CartRepositoryImpl implements CartRepository {
         cart.setCreatedAt(rs.getString("created_at"));
         
         transaction.setId(rs.getInt("transaction_id"));
+        
         item.setId(rs.getInt("item_id"));
+        item.setName(rs.getString("i_name"));
+        item.setPrice(rs.getFloat("i_price"));
+        item.setStock(rs.getInt("i_stock"));
+        item.setCategory(rs.getString("i_category"));
+        item.setImage(rs.getString("i_image"));
+        item.setUpdatedAt(rs.getString("i_updated_at"));
+        item.setCreatedAt(rs.getString("i_created_at"));
         
         return cart;
     }
