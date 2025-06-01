@@ -18,7 +18,7 @@ public class CartCache {
     public static void push(Cart cart) {
         int id = 1;
         if(!carts.isEmpty()) {
-            id = carts.getLast().getId();
+            id = carts.get(carts.size() - 1).getId();
         }
         
         cart.setId(id);
