@@ -13,7 +13,7 @@ import java.util.List;
  * @author farhannivta
  */
 public class CartCache {
-    private static List<Cart> carts = new ArrayList<>();
+    private static final List<Cart> carts = new ArrayList<>();
     
     public static void push(Cart cart) {
         int id = 1;
@@ -21,7 +21,13 @@ public class CartCache {
             id = carts.getLast().getId();
         }
         
+        cart.setId(id);
+        
         carts.add(cart);
+    }
+    
+    public static List<Cart> getCarts() {
+        return CartCache.carts;
     }
     
     public static void remove(int id) {
@@ -30,5 +36,15 @@ public class CartCache {
     
     public static void clear() {
         carts.clear();
+    }
+    
+    public static int totalBill() {
+        int total = 0;
+        
+        for(Cart c: carts) {
+            total += c.getTotal() * c.getItem().getPrice();
+        }
+        
+        return total;
     }
 }
