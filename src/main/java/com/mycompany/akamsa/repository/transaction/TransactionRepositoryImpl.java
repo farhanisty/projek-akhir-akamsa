@@ -24,10 +24,9 @@ public class TransactionRepositoryImpl implements TransactionRepository {
     private final String tableName = "transaction";
 
     @Override
-    public boolean insert(Transaction transaction) throws RepositoryException {
+    public int insert(Transaction transaction) throws RepositoryException {
         PreparedStatement st = null;
-        boolean result = false;
-        
+               
         try {
             String sql = "INSERT INTO " + this.tableName + "(cashier_id, customer, number_phone, address, total_price, start_date, end_date) VALUES(?, ?, ?, ?, ?, ?, ?)";
             st = Connector.getConnection().prepareStatement(sql);
@@ -41,7 +40,14 @@ public class TransactionRepositoryImpl implements TransactionRepository {
             st.setString(7, transaction.getEndDate());
             
             if(st.executeUpdate() > 0) {
-                result = true;
+                ResultSet generatedKeys = st.getGeneratedKeys();
+                if(generatedKeys.next()) {
+                    return generatedKeys.getInt(1);
+                } else {
+                    return 0;
+                }
+            } else {
+                return 0;
             }
         } catch(SQLException e) {
             throw new RepositoryException(e.getMessage(), e);
@@ -52,8 +58,6 @@ public class TransactionRepositoryImpl implements TransactionRepository {
                 throw new RepositoryException(e.getMessage(), e);
             }
         }
-        
-        return result;
     }
 
     @Override
