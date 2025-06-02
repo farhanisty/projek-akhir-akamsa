@@ -98,7 +98,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         isVerifiedComboBox.setBackground(new java.awt.Color(255, 255, 255));
         isVerifiedComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "True", "False" }));
 
-        updateButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        updateButton.setBackground(java.awt.Color.orange);
         updateButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         updateButton.setForeground(new java.awt.Color(255, 255, 255));
         updateButton.setText("Update");
