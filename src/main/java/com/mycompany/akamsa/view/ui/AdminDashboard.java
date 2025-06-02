@@ -31,7 +31,17 @@ public class AdminDashboard extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        userTable = new javax.swing.JTable();
+        idLabel = new javax.swing.JLabel();
+        idLabel1 = new javax.swing.JLabel();
+        idLabel2 = new javax.swing.JLabel();
+        idLabel3 = new javax.swing.JLabel();
+        idTextField = new javax.swing.JTextField();
+        usernameTextField = new javax.swing.JTextField();
+        isAdminComboBox = new javax.swing.JComboBox<>();
+        isVerifiedComboBox = new javax.swing.JComboBox<>();
+        updateButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -43,9 +53,10 @@ public class AdminDashboard extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(240, 247, 247));
 
         jLabel1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Admin Dashboard");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        userTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -56,7 +67,47 @@ public class AdminDashboard extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(userTable);
+
+        idLabel.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        idLabel.setForeground(new java.awt.Color(0, 0, 0));
+        idLabel.setText("Id");
+
+        idLabel1.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        idLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        idLabel1.setText("Username");
+
+        idLabel2.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        idLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        idLabel2.setText("Is Admin");
+
+        idLabel3.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        idLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        idLabel3.setText("Is Verified");
+
+        idTextField.setEditable(false);
+        idTextField.setBackground(new java.awt.Color(255, 255, 255));
+        idTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+
+        usernameTextField.setBackground(new java.awt.Color(255, 255, 255));
+        usernameTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+
+        isAdminComboBox.setBackground(new java.awt.Color(255, 255, 255));
+        isAdminComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "True", "False" }));
+
+        isVerifiedComboBox.setBackground(new java.awt.Color(255, 255, 255));
+        isVerifiedComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "True", "False" }));
+
+        updateButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        updateButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        updateButton.setForeground(new java.awt.Color(255, 255, 255));
+        updateButton.setText("Update");
+
+        deleteButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Red"));
+        deleteButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        deleteButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteButton.setText("Delete");
+        deleteButton.setPreferredSize(new java.awt.Dimension(75, 24));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -66,16 +117,59 @@ public class AdminDashboard extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(90, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(idLabel1)
+                                    .addComponent(idLabel)
+                                    .addComponent(idLabel2)
+                                    .addComponent(idLabel3))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(idTextField)
+                                    .addComponent(usernameTextField)
+                                    .addComponent(isAdminComboBox, 0, 156, Short.MAX_VALUE)
+                                    .addComponent(isVerifiedComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGap(54, 54, 54))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jLabel1)
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(idLabel)
+                            .addComponent(idTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(idLabel1)
+                            .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(idLabel2)
+                            .addComponent(isAdminComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(idLabel3)
+                            .addComponent(isVerifiedComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
 
@@ -158,12 +252,22 @@ public class AdminDashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogOut;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JLabel idLabel;
+    private javax.swing.JLabel idLabel1;
+    private javax.swing.JLabel idLabel2;
+    private javax.swing.JLabel idLabel3;
+    private javax.swing.JTextField idTextField;
+    private javax.swing.JComboBox<String> isAdminComboBox;
+    private javax.swing.JComboBox<String> isVerifiedComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JButton updateButton;
+    private javax.swing.JTable userTable;
+    private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 }
