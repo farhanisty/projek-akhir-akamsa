@@ -11,6 +11,8 @@ import com.mycompany.akamsa.common.ClickListener;
  * @author farhannivta
  */
 public interface CategoryDashboardView {
+    public void open();
+    
     public void addLightingListener(ClickListener listener);
     
     public void addTendaListener(ClickListener listener);
@@ -22,4 +24,6 @@ public interface CategoryDashboardView {
     public void addCarrierListener(ClickListener listener);
     
     public void addNavigationListener(ClickListener listener);
+    
+    public void close();
 }
