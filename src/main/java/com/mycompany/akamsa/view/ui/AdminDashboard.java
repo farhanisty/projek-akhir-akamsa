@@ -149,7 +149,9 @@ public class AdminDashboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminDashboard().setVisible(true);
+                AdminDashboard ui = new AdminDashboard();
+                ui.setLocationRelativeTo(null);
+                ui.setVisible(true);
             }
         });
     }

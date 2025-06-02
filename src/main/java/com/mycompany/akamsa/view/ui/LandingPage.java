@@ -257,7 +257,9 @@ public class LandingPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LandingPage().setVisible(true);
+                LandingPage ui = new LandingPage();
+                ui.setLocationRelativeTo(null);
+                ui.setVisible(true);
             }
         });
     }
