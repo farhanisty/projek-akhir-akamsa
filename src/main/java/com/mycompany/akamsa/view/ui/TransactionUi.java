@@ -8,19 +8,32 @@ import com.mycompany.akamsa.common.ClickListener;
 import com.mycompany.akamsa.entity.Transaction;
 import com.mycompany.akamsa.view.TransactionView;
 import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author ASUS
  */
-public class Transaksi extends javax.swing.JFrame implements TransactionView {
+public class TransactionUi extends javax.swing.JFrame implements TransactionView {
 
     /**
      * Creates new form nitip
      */
-    public Transaksi() {
+    public TransactionUi() {
         initComponents();
+        setupTable();
     }
+    
+    private void setupTable() {
+        String[] columns = {
+            "ID", "Cashier", "Customer", "Phone", "Address", "Total Price",
+            "Start Date", "End Date", "Updated At", "Created At"
+        };
+
+        DefaultTableModel model = new DefaultTableModel(columns, 0);
+        transactionTable.setModel(model);
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,9 +47,9 @@ public class Transaksi extends javax.swing.JFrame implements TransactionView {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        transactionTable = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
-        searchTxtfield = new javax.swing.JTextField();
+        searchTextField = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -55,7 +68,7 @@ public class Transaksi extends javax.swing.JFrame implements TransactionView {
         jLabel1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         jLabel1.setText("Transaksi");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        transactionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -66,12 +79,12 @@ public class Transaksi extends javax.swing.JFrame implements TransactionView {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(transactionTable);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel6.setText("Search");
 
-        searchTxtfield.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        searchTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
         searchButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
         searchButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -89,7 +102,7 @@ public class Transaksi extends javax.swing.JFrame implements TransactionView {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
-                        .addComponent(searchTxtfield, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(searchButton))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 785, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -103,7 +116,7 @@ public class Transaksi extends javax.swing.JFrame implements TransactionView {
                     .addComponent(searchButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
-                        .addComponent(searchTxtfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1)))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -207,14 +220,78 @@ public class Transaksi extends javax.swing.JFrame implements TransactionView {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Transaksi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TransactionView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Transaksi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TransactionView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Transaksi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TransactionView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Transaksi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TransactionView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -283,7 +360,9 @@ public class Transaksi extends javax.swing.JFrame implements TransactionView {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Transaksi().setVisible(true);
+                TransactionUi ui = new TransactionUi();
+                ui.setLocationRelativeTo(null);
+                ui.setVisible(true);
             }
         });
     }
@@ -301,9 +380,9 @@ public class Transaksi extends javax.swing.JFrame implements TransactionView {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton searchButton;
-    private javax.swing.JTextField searchTxtfield;
+    private javax.swing.JTextField searchTextField;
+    private javax.swing.JTable transactionTable;
     // End of variables declaration//GEN-END:variables
 
     @Override
@@ -313,12 +392,28 @@ public class Transaksi extends javax.swing.JFrame implements TransactionView {
 
     @Override
     public void setTransactionData(List<Transaction> transactions) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        DefaultTableModel model = (DefaultTableModel) transactionTable.getModel();
+        model.setRowCount(0);
+
+        for (Transaction t : transactions) {
+            model.addRow(new Object[]{
+                t.getId(),
+                t.getCashier(),
+                t.getCustomer(),
+                t.getNumberPhone(),
+                t.getAddress(),
+                t.getTotalPrice(),
+                t.getStartDate(),
+                t.getEndDate(),
+                t.getUpdatedAt(),
+                t.getCreatedAt()
+            });
+        }
     }
 
     @Override
     public String getSearchInput() {
-        return searchTxtfield.getText();
+        return searchTextField.getText();
     }
 
     @Override
