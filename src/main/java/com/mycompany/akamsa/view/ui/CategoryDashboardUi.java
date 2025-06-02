@@ -11,12 +11,12 @@ import com.mycompany.akamsa.view.CategoryDashboardView;
  *
  * @author ASUS
  */
-public class SewaKategori extends javax.swing.JFrame implements CategoryDashboardView {
+public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryDashboardView {
 
     /**
      * Creates new form nitip
      */
-    public SewaKategori() {
+    public CategoryDashboardUi() {
         initComponents();
     }
 
@@ -237,14 +237,78 @@ public class SewaKategori extends javax.swing.JFrame implements CategoryDashboar
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SewaKategori.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CategoryDashboardUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SewaKategori.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CategoryDashboardUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SewaKategori.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CategoryDashboardUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SewaKategori.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CategoryDashboardUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -313,7 +377,9 @@ public class SewaKategori extends javax.swing.JFrame implements CategoryDashboar
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SewaKategori().setVisible(true);
+                CategoryDashboardUi ui = new CategoryDashboardUi();
+                ui.setLocationRelativeTo(null);
+                ui.setVisible(true);
             }
         });
     }
@@ -365,5 +431,15 @@ public class SewaKategori extends javax.swing.JFrame implements CategoryDashboar
     @Override
     public void addNavigationListener(ClickListener listener) {
         this.navigationButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void open() {
+        this.setVisible(true);
+    }
+
+    @Override
+    public void close() {
+        this.dispose();
     }
 }
