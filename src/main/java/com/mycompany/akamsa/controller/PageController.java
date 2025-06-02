@@ -6,10 +6,21 @@ package com.mycompany.akamsa.controller;
 
 import com.mycompany.akamsa.presenter.CategoryDashboardPresenter;
 import com.mycompany.akamsa.presenter.LoginPresenter;
+import com.mycompany.akamsa.presenter.PurchaseCartPresenter;
+import com.mycompany.akamsa.presenter.RentItemDetailPresenter;
 import com.mycompany.akamsa.presenter.SignUpPresenter;
+import com.mycompany.akamsa.presenter.TransactionPresenter;
+import com.mycompany.akamsa.repository.cart.CartRepository;
+import com.mycompany.akamsa.repository.cart.CartRepositoryFactory;
+import com.mycompany.akamsa.repository.item.ItemRepository;
+import com.mycompany.akamsa.repository.item.ItemRepositoryFactory;
+import com.mycompany.akamsa.repository.transaction.TransactionRepository;
+import com.mycompany.akamsa.repository.transaction.TransactionRepositoryFactory;
 import com.mycompany.akamsa.repository.user.UserRepository;
 import com.mycompany.akamsa.repository.user.UserRepositoryFactory;
-import com.mycompany.akamsa.view.CategoryDashboardView;
+import com.mycompany.akamsa.view.PurchaseCartView;
+import com.mycompany.akamsa.view.RentItemDetailView;
+import com.mycompany.akamsa.view.TransactionView;
 import com.mycompany.akamsa.view.auth.SignIn;
 import com.mycompany.akamsa.view.auth.SignUp;
 import com.mycompany.akamsa.view.ui.SewaKategori;
@@ -20,9 +31,15 @@ import com.mycompany.akamsa.view.ui.SewaKategori;
  */
 public class PageController {
     private UserRepository userRepository;
+    private CartRepository cartRepository;
+    private TransactionRepository transactionRepository;
+    private ItemRepository itemRepository;
     
     public PageController() {
         this.userRepository = UserRepositoryFactory.getSingletone();
+        this.cartRepository = CartRepositoryFactory.getSingletone();
+        this.transactionRepository = TransactionRepositoryFactory.getSingletone();
+        this.itemRepository = ItemRepositoryFactory.getSingletone();
     }
     public void showLogin() {
         SignIn signIn = new SignIn();
@@ -44,5 +61,22 @@ public class PageController {
         categoryDashboardView.setVisible(true);
         
         CategoryDashboardPresenter categoryDashboardPresenter = new CategoryDashboardPresenter(categoryDashboardView, this);
+    }
+    
+    public void showPurchaseCart() {
+        PurchaseCartView purchaseCartView = null;
+        PurchaseCartPresenter purchaseCartPresenter = new PurchaseCartPresenter(purchaseCartView, this.transactionRepository, this.cartRepository);
+        
+    }
+    
+    public void showRentItemDetail(int id) {
+        RentItemDetailView view = null;
+        RentItemDetailPresenter rentItemDetailPresenter = new RentItemDetailPresenter(id, view, this.itemRepository);
+    }
+    
+    public void showTransaction() {
+        TransactionView view = null;
+        
+        TransactionPresenter transactionPresenter = new TransactionPresenter(view, this.transactionRepository);
     }
 }

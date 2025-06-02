@@ -4,6 +4,7 @@
  */
 package com.mycompany.akamsa.presenter;
 
+import com.mycompany.akamsa.common.Auth;
 import com.mycompany.akamsa.controller.PageController;
 import com.mycompany.akamsa.entity.User;
 import com.mycompany.akamsa.exception.EntityNotFoundException;
@@ -43,6 +44,7 @@ public class LoginPresenter {
             User user = this.userRepository.getByUsername(username);
             
             if(PasswordHelper.verifyPassword(password, user.getPassword())) {
+                Auth.setUser(user);
                 this.loginView.showMessage("Login Berhasil");
                 this.loginView.close();
                 
