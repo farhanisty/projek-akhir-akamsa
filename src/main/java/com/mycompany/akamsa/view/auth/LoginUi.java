@@ -15,12 +15,12 @@ import javax.swing.JOptionPane;
  *
  * @author ASUS
  */
-public class SignIn extends javax.swing.JFrame implements LoginView {
+public class LoginUi extends javax.swing.JFrame implements LoginView {
 
     /**
      * Creates new form MainView
      */
-    public SignIn() {
+    public LoginUi() {
         initComponents();
     }
 
@@ -136,7 +136,7 @@ public class SignIn extends javax.swing.JFrame implements LoginView {
 
     @Override
     public String getPasswordInput() {
-        return this.passwordTextField.getText();
+        return new String(this.passwordTextField.getPassword());
     }
 
     @Override
