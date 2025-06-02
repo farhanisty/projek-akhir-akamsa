@@ -4,16 +4,21 @@
  */
 package com.mycompany.akamsa.view.ui;
 
+import com.mycompany.akamsa.common.ClickListener;
+import com.mycompany.akamsa.entity.Item;
+import com.mycompany.akamsa.view.RentItemDetailView;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ASUS
  */
-public class DetailBarangSewa extends javax.swing.JFrame {
+public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDetailView {
 
     /**
      * Creates new form nitip
      */
-    public DetailBarangSewa() {
+    public RentItemDetailUi() {
         initComponents();
     }
 
@@ -36,13 +41,15 @@ public class DetailBarangSewa extends javax.swing.JFrame {
         btnTransaksi2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        namaLabel = new javax.swing.JLabel();
+        imageLabel = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        beliTextField = new javax.swing.JTextField();
+        stokLabel = new javax.swing.JLabel();
+        hargaLabel = new javax.swing.JLabel();
+        addKeranjangButton = new javax.swing.JButton();
+        kategoriLabel = new javax.swing.JLabel();
+        idLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -108,79 +115,57 @@ public class DetailBarangSewa extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(240, 247, 247));
         jPanel3.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Detail Barang");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("?Nama Barang");
+        namaLabel.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        namaLabel.setForeground(new java.awt.Color(0, 0, 0));
+        namaLabel.setText("?Nama Barang");
+        jPanel3.add(namaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 509, -1));
 
-        jLabel7.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("?Image");
+        imageLabel.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        imageLabel.setForeground(new java.awt.Color(0, 0, 0));
+        imageLabel.setText("?Image");
+        jPanel3.add(imageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 250, 250));
 
         jLabel8.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Beli");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 471, -1, -1));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        beliTextField.setBackground(new java.awt.Color(255, 255, 255));
+        beliTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel3.add(beliTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 472, 46, -1));
 
-        jLabel9.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Stok : ?");
+        stokLabel.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        stokLabel.setForeground(new java.awt.Color(0, 0, 0));
+        stokLabel.setText("Stok : ?");
+        jPanel3.add(stokLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 471, -1, -1));
 
-        jLabel12.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel12.setText("Harga per Hari : ?");
+        hargaLabel.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        hargaLabel.setForeground(new java.awt.Color(0, 0, 0));
+        hargaLabel.setText("Harga per Hari : ?");
+        jPanel3.add(hargaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 443, -1, -1));
 
-        jButton1.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("+ Keranjang");
+        addKeranjangButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        addKeranjangButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        addKeranjangButton.setForeground(new java.awt.Color(255, 255, 255));
+        addKeranjangButton.setText("+ Keranjang");
+        jPanel3.add(addKeranjangButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 533, 120, 35));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel9))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(341, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addGap(40, 40, 40)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(82, Short.MAX_VALUE))
-        );
+        kategoriLabel.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        kategoriLabel.setForeground(new java.awt.Color(0, 0, 0));
+        kategoriLabel.setText("?Kategori");
+        jPanel3.add(kategoriLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, -1, -1));
+
+        idLabel.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        idLabel.setForeground(new java.awt.Color(0, 0, 0));
+        idLabel.setText("Id : ?");
+        jPanel3.add(idLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, -1, -1));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 0, 900, 600));
 
@@ -221,14 +206,78 @@ public class DetailBarangSewa extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DetailBarangSewa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentItemDetailUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DetailBarangSewa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentItemDetailUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DetailBarangSewa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentItemDetailUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DetailBarangSewa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentItemDetailUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -297,28 +346,74 @@ public class DetailBarangSewa extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DetailBarangSewa().setVisible(true);
+                RentItemDetailUi ui = new RentItemDetailUi();
+                ui.setLocationRelativeTo(null);
+                ui.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addKeranjangButton;
+    private javax.swing.JTextField beliTextField;
     private javax.swing.JButton btnHomePage;
     private javax.swing.JButton btnLogOut;
     private javax.swing.JButton btnSewa;
     private javax.swing.JButton btnTransaksi;
     private javax.swing.JButton btnTransaksi2;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel hargaLabel;
+    private javax.swing.JLabel idLabel;
+    private javax.swing.JLabel imageLabel;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel kategoriLabel;
+    private javax.swing.JLabel namaLabel;
+    private javax.swing.JLabel stokLabel;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void open() {
+        this.setVisible(true);
+    }
+
+    @Override
+    public void setItem(Item item) {
+        idLabel.setText("Id Barang : " + String.valueOf(item.getId()));
+        namaLabel.setText(item.getName());
+        hargaLabel.setText("Harga per Hari : Rp. " + item.getPrice());
+        stokLabel.setText("Stok : " + String.valueOf(item.getStock()));
+        kategoriLabel.setText(item.getCategory());
+// testing : update at dan satunya di edit..
+
+        // testing
+
+        // jika image dalam bentuk path atau URL
+//        ImageIcon icon = new ImageIcon(item.getImage()); // pastikan path valid
+//        Image scaledImage = icon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+//        imageLabel.setIcon(new ImageIcon(scaledImage));
+    }
+
+    @Override
+    public int getCountBeliInput() {
+        return Integer.parseInt(this.beliTextField.getText());
+    }
+
+    @Override
+    public void setCartClickListener(ClickListener listener) {
+        this.addKeranjangButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void showMessage(String message) {
+        JOptionPane.showMessageDialog(this, message);
+    }
+
+    @Override
+    public void close() {
+        this.dispose();
+    }
 }
