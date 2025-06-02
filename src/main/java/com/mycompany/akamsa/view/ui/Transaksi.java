@@ -4,11 +4,16 @@
  */
 package com.mycompany.akamsa.view.ui;
 
+import com.mycompany.akamsa.common.ClickListener;
+import com.mycompany.akamsa.entity.Transaction;
+import com.mycompany.akamsa.view.TransactionView;
+import java.util.List;
+
 /**
  *
  * @author ASUS
  */
-public class Transaksi extends javax.swing.JFrame {
+public class Transaksi extends javax.swing.JFrame implements TransactionView {
 
     /**
      * Creates new form nitip
@@ -31,8 +36,8 @@ public class Transaksi extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        searchTxtfield = new javax.swing.JTextField();
+        searchButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -66,11 +71,11 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel6.setText("Search");
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        searchTxtfield.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        jButton3.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
-        jButton3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-search-25.png"))); // NOI18N
+        searchButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        searchButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        searchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-search-25.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -84,9 +89,9 @@ public class Transaksi extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(searchTxtfield, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3))
+                        .addComponent(searchButton))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 785, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(84, Short.MAX_VALUE))
         );
@@ -95,14 +100,14 @@ public class Transaksi extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(searchTxtfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1)))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 0, 900, 600));
@@ -289,7 +294,6 @@ public class Transaksi extends javax.swing.JFrame {
     private javax.swing.JButton btnSewa;
     private javax.swing.JButton btnTransaksi;
     private javax.swing.JButton btnTransaksi2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -298,6 +302,32 @@ public class Transaksi extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton searchButton;
+    private javax.swing.JTextField searchTxtfield;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void open() {
+        this.setVisible(true);
+    }
+
+    @Override
+    public void setTransactionData(List<Transaction> transactions) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public String getSearchInput() {
+        return searchTxtfield.getText();
+    }
+
+    @Override
+    public void addSearchClickListener(ClickListener listener) {
+        this.searchButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void close() {
+        this.dispose();
+    }
 }
