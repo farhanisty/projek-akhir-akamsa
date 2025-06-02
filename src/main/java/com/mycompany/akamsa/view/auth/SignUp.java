@@ -194,7 +194,9 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SignUp().setVisible(true);
+                SignUp ui = new SignUp();
+                ui.setLocationRelativeTo(null);
+                ui.setVisible(true);
             }
         });
     }
@@ -239,7 +241,7 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
 
     @Override
     public String getPasswordInput() {
-        return this.passwordTextField.getText();
+        return new String(this.passwordTextField.getPassword());
     }
 
     @Override
@@ -249,7 +251,7 @@ public class SignUp extends javax.swing.JFrame implements SignUpView {
 
     @Override
     public String getConfirmPasswordInput() {
-        return this.confirmPasswordTextField.getText();
+        return new String(this.confirmPasswordTextField.getPassword());
     }
 
     @Override
