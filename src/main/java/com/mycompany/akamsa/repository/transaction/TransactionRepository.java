@@ -13,7 +13,7 @@ import java.util.List;
  * @author farhannivta
  */
 public interface TransactionRepository {
-    public boolean insert(Transaction transaction) throws RepositoryException;
+    public int insert(Transaction transaction) throws RepositoryException;
     
     public List<Transaction> getAll() throws RepositoryException;
     
