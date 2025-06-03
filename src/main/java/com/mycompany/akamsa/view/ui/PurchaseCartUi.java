@@ -10,6 +10,7 @@ import com.mycompany.akamsa.view.PurchaseCartView;
 import com.mycompany.akamsa.view.SidebarView;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -23,15 +24,18 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
      */
     public PurchaseCartUi() {
         initComponents();
+        setupTable();
     }
+    
+    private List<Cart> currentCarts;
     
     private void setupTable() {
         String[] columns = {
-            "ID", "Item Id", "Transaction Id", "Total", "Update At", "CreatedAt"
+            "ID", "Item Id", "Transaction Id", "Total"
         };
 
         DefaultTableModel model = new DefaultTableModel(columns, 0);
-        purchaseCartTable.setModel(model);
+        cartTable.setModel(model);
     }
 
     /**
@@ -46,7 +50,7 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        purchaseCartTable = new javax.swing.JTable();
+        cartTable = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
         tanggalMulaiComboBox = new javax.swing.JComboBox<>();
@@ -84,7 +88,7 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
         jLabel1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         jLabel1.setText("Purchase Cart");
 
-        purchaseCartTable.setModel(new javax.swing.table.DefaultTableModel(
+        cartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -95,7 +99,7 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(purchaseCartTable);
+        jScrollPane1.setViewportView(cartTable);
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -406,6 +410,7 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
     private javax.swing.JButton btnTransaksi;
     private javax.swing.JComboBox<String> bulanBerakhirComboBox;
     private javax.swing.JComboBox<String> bulanMulaiComboBox;
+    private javax.swing.JTable cartTable;
     private javax.swing.JButton clearButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -423,7 +428,6 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField namaTextField;
     private javax.swing.JTextField nomorhpTextField;
-    private javax.swing.JTable purchaseCartTable;
     private javax.swing.JButton sewaButton;
     private javax.swing.JTextField tahunBerakhirTextField;
     private javax.swing.JTextField tahunMulaiTextField;
@@ -439,17 +443,17 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
 
     @Override
     public void setCarts(List<Cart> carts) {
-        DefaultTableModel model = (DefaultTableModel) purchaseCartTable.getModel();
+        this.currentCarts = carts;
+        
+        DefaultTableModel model = (DefaultTableModel) cartTable.getModel();
         model.setRowCount(0);
 
         for (Cart c : carts) {
             model.addRow(new Object[]{
                 c.getId(),
-                c.getItem(), // testing ono le salah iki ketoke asli dah
+                c.getItem(),
                 c.getTransaction(),
                 c.getTotal(),
-                c.getUpdatedAt(),
-                c.getCreatedAt(),
             });
         }
 
@@ -536,5 +540,23 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
     @Override
     public void addTransactionPageClickListener(ClickListener listener) {
         this.btnTransaksi.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void setCartTableClickListener(ListSelectionListener listener) {
+        this.cartTable.getSelectionModel().addListSelectionListener(listener);
+    }
+
+    @Override
+    public int getSelectedRowIndex() {
+        return this.cartTable.getSelectedRow();
+    }
+
+    @Override
+    public Cart getCartByRow(int row) {
+        if (currentCarts != null && row >= 0 && row < currentCarts.size()) {
+            return currentCarts.get(row);
+        }
+        return null;
     }
 }

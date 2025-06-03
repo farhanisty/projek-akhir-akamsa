@@ -7,6 +7,8 @@ package com.mycompany.akamsa.view;
 import com.mycompany.akamsa.common.ClickListener;
 import com.mycompany.akamsa.entity.Transaction;
 import java.util.List;
+import javax.swing.event.ListSelectionListener;
+
 
 /**
  *
@@ -22,4 +24,9 @@ public interface TransactionView {
     public void addSearchClickListener(ClickListener listener);
     
     public void close();
+    
+    
+    public void setTransactionTableClickListener(ListSelectionListener listener);
+    public int getSelectedRowIndex();
+    public Transaction getTransactionByRow(int row);
 }

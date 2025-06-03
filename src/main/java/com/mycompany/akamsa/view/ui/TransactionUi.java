@@ -9,6 +9,7 @@ import com.mycompany.akamsa.entity.Transaction;
 import com.mycompany.akamsa.view.SidebarView;
 import com.mycompany.akamsa.view.TransactionView;
 import java.util.List;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -447,5 +448,23 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
     @Override
     public void addTransactionPageClickListener(ClickListener listener) {
         this.btnTransaksi.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void setTransactionTableClickListener(ListSelectionListener listener) {
+        this.transactionTable.getSelectionModel().addListSelectionListener(listener);
+    }
+
+    @Override
+    public int getSelectedRowIndex() {
+        return this.transactionTable.getSelectedRow();
+    }
+
+    @Override
+    public Transaction getTransactionByRow(int row) {
+        if (currentTransactions != null && row >= 0 && row < currentTransactions.size()) {
+            return currentTransactions.get(row);
+        }
+        return null;
     }
 }
