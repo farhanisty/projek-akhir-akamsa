@@ -28,7 +28,7 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
     private void setupTable() {
         String[] columns = {
             "ID", "Cashier", "Customer", "Phone", "Address", "Total Price",
-            "Start Date", "End Date", "Updated At", "Created At"
+            "Start Date", "End Date"
         };
 
         DefaultTableModel model = new DefaultTableModel(columns, 0);
@@ -406,8 +406,6 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
                 t.getTotalPrice(),
                 t.getStartDate(),
                 t.getEndDate(),
-                t.getUpdatedAt(),
-                t.getCreatedAt()
             });
         }
     }
