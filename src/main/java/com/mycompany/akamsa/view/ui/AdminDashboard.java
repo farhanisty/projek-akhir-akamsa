@@ -5,18 +5,37 @@
 package com.mycompany.akamsa.view.ui;
 
 import com.mycompany.akamsa.*;
+import com.mycompany.akamsa.common.ClickListener;
+import com.mycompany.akamsa.entity.User;
+import com.mycompany.akamsa.view.AdminDashboardView;
+import java.util.List;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author ASUS
  */
-public class AdminDashboard extends javax.swing.JFrame {
+public class AdminDashboard extends javax.swing.JFrame implements AdminDashboardView {
 
     /**
      * Creates new form LandingPage
      */
     public AdminDashboard() {
         initComponents();
+        setupTable();
+    }
+    
+    private List<User> currentUsers;
+    
+    private void setupTable() {
+        
+        String[] columns = {
+            "ID", "Username", "Name", "Password", "Is_Admin", "Is_Verified"
+        };
+
+        DefaultTableModel model = new DefaultTableModel(columns, 0);
+        userTable.setModel(model);
     }
 
     /**
@@ -270,4 +289,56 @@ public class AdminDashboard extends javax.swing.JFrame {
     private javax.swing.JTable userTable;
     private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void open() {
+        this.setVisible(true);
+    }
+
+    @Override
+    public void setUsers(List<User> Users) {
+        this.currentUsers = Users;
+
+        DefaultTableModel model = (DefaultTableModel) userTable.getModel();
+        model.setRowCount(0);
+        
+        for (User u : Users) {
+            model.addRow(new Object[]{
+                u.getId(),
+                u.getUsername(),
+                u.getName(),
+                u.getPassword(),
+                u.getIsAdmin(),
+                u.getIsVerified()
+            });
+        }
+    }
+
+    @Override
+    public void close() {
+        this.dispose();
+    }
+
+    @Override
+    public void setUserTableClickListener(ListSelectionListener listener) {
+        this.userTable.getSelectionModel().addListSelectionListener(listener);
+    }
+
+    @Override
+    public int getSelectedRowIndex() {
+        return this.userTable.getSelectedRow();
+    }
+
+    @Override
+    public User getUserbyRow(int row) {
+        if (currentUsers != null && row >= 0 && row < currentUsers.size()) {
+            return currentUsers.get(row);
+        }
+        return null;
+    }
+
+    @Override
+    public void addButtonLogOutClickListener(ClickListener listener) {
+        this.btnLogOut.addActionListener((e) -> listener.onClick());
+    }
 }

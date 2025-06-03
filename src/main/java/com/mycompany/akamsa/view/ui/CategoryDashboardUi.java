@@ -6,12 +6,13 @@ package com.mycompany.akamsa.view.ui;
 
 import com.mycompany.akamsa.common.ClickListener;
 import com.mycompany.akamsa.view.CategoryDashboardView;
+import com.mycompany.akamsa.view.SidebarView;
 
 /**
  *
  * @author ASUS
  */
-public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryDashboardView {
+public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryDashboardView, SidebarView {
 
     /**
      * Creates new form nitip
@@ -41,12 +42,13 @@ public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryD
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         btnHomePage = new javax.swing.JButton();
-        btnTransaksi = new javax.swing.JButton();
+        btnPurchaseCart = new javax.swing.JButton();
         btnSewa = new javax.swing.JButton();
         btnLogOut = new javax.swing.JButton();
-        btnTransaksi2 = new javax.swing.JButton();
+        btnTransaksi = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(240, 247, 247));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -103,6 +105,8 @@ public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryD
         });
         jPanel3.add(lightingButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, 225, 225));
 
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 0, 869, 600));
+
         jPanel2.setBackground(new java.awt.Color(5, 54, 44));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -119,15 +123,15 @@ public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryD
         btnHomePage.setText("Home Page");
         jPanel2.add(btnHomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 200, 40));
 
-        btnTransaksi.setBackground(new java.awt.Color(5, 54, 44));
-        btnTransaksi.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        btnTransaksi.setText("Purchase Cart");
-        btnTransaksi.addActionListener(new java.awt.event.ActionListener() {
+        btnPurchaseCart.setBackground(new java.awt.Color(5, 54, 44));
+        btnPurchaseCart.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnPurchaseCart.setText("Purchase Cart");
+        btnPurchaseCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTransaksiActionPerformed(evt);
+                btnPurchaseCartActionPerformed(evt);
             }
         });
-        jPanel2.add(btnTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 200, 40));
+        jPanel2.add(btnPurchaseCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 200, 40));
 
         btnSewa.setBackground(new java.awt.Color(5, 54, 44));
         btnSewa.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
@@ -149,32 +153,17 @@ public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryD
         });
         jPanel2.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 200, 40));
 
-        btnTransaksi2.setBackground(new java.awt.Color(5, 54, 44));
-        btnTransaksi2.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        btnTransaksi2.setText("Transaksi");
-        btnTransaksi2.addActionListener(new java.awt.event.ActionListener() {
+        btnTransaksi.setBackground(new java.awt.Color(5, 54, 44));
+        btnTransaksi.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnTransaksi.setText("Transaksi");
+        btnTransaksi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTransaksi2ActionPerformed(evt);
+                btnTransaksiActionPerformed(evt);
             }
         });
-        jPanel2.add(btnTransaksi2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 200, 40));
+        jPanel2.add(btnTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 200, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 869, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
 
         pack();
         setLocationRelativeTo(null);
@@ -183,22 +172,6 @@ public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryD
     private void toolButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toolButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_toolButtonActionPerformed
-
-    private void btnTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransaksiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTransaksiActionPerformed
-
-    private void btnSewaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSewaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSewaActionPerformed
-
-    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnLogOutActionPerformed
-
-    private void btnTransaksi2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransaksi2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTransaksi2ActionPerformed
 
     private void carrierButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carrierButtonActionPerformed
         // TODO add your handling code here:
@@ -219,6 +192,22 @@ public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryD
     private void lightingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lightingButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lightingButtonActionPerformed
+
+    private void btnPurchaseCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPurchaseCartActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPurchaseCartActionPerformed
+
+    private void btnSewaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSewaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSewaActionPerformed
+
+    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLogOutActionPerformed
+
+    private void btnTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransaksiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTransaksiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -387,9 +376,9 @@ public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryD
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHomePage;
     private javax.swing.JButton btnLogOut;
+    private javax.swing.JButton btnPurchaseCart;
     private javax.swing.JButton btnSewa;
     private javax.swing.JButton btnTransaksi;
-    private javax.swing.JButton btnTransaksi2;
     private javax.swing.JButton carrierButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -441,5 +430,30 @@ public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryD
     @Override
     public void close() {
         this.dispose();
+    }
+
+    @Override
+    public void addHomePageClickListener(ClickListener listener) {
+        this.btnHomePage.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addRentPageClickListener(ClickListener listener) {
+        this.btnSewa.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addCartPageClickListener(ClickListener listener) {
+        this.btnPurchaseCart.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addTransactionPageClickListener(ClickListener listener) {
+        this.btnTransaksi.addActionListener(e -> listener.onClick());
+    }
+    
+    @Override
+    public void addButtonLogOutClickListener(ClickListener listener) {
+        this.btnLogOut.addActionListener(e -> listener.onClick());
     }
 }

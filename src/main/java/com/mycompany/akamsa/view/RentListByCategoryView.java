@@ -4,29 +4,23 @@
  */
 package com.mycompany.akamsa.view;
 
-import com.mycompany.akamsa.common.ClickListener;
-import com.mycompany.akamsa.entity.Transaction;
+import com.mycompany.akamsa.entity.Item;
 import java.util.List;
 import javax.swing.event.ListSelectionListener;
-
 
 /**
  *
  * @author farhannivta
  */
-public interface TransactionView {
+public interface RentListByCategoryView {
     public void open();
     
-    public void setTransactionData(List<Transaction> transactions);
-    
-    public String getSearchInput();
-    
-    public void addSearchClickListener(ClickListener listener);
+    public void setItems(List<Item> items);
     
     public void close();
     
     
-    public void setTransactionTableClickListener(ListSelectionListener listener);
+    public void setItemTableClickListener(ListSelectionListener listener);
     public int getSelectedRowIndex();
-    public Transaction getTransactionByRow(int row);
+    public Item getItemByRow(int row);
 }

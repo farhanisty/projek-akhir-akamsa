@@ -23,35 +23,16 @@ public class CategoryDashboardPresenter {
     }
     
     private void initListener() {
-        this.categoryDashboardView.addCarrierListener(() -> onCarrierClick());
-        this.categoryDashboardView.addLightingListener(() -> onLightingClick());
-        this.categoryDashboardView.addNavigationListener(() -> onNavigationClick());
-        this.categoryDashboardView.addTendaListener(() -> onTendaClick());
-        this.categoryDashboardView.addToolListener(() -> onToolClick());
-        this.categoryDashboardView.addWearListener(() -> onWearClick());
+        this.categoryDashboardView.addCarrierListener(() -> fireRentListByCategoryView("Carrier"));
+        this.categoryDashboardView.addLightingListener(() -> fireRentListByCategoryView("Carrier"));
+        this.categoryDashboardView.addNavigationListener(() -> fireRentListByCategoryView("Carrier"));
+        this.categoryDashboardView.addTendaListener(() -> fireRentListByCategoryView("Carrier"));
+        this.categoryDashboardView.addToolListener(() -> fireRentListByCategoryView("Carrier"));
+        this.categoryDashboardView.addWearListener(() -> fireRentListByCategoryView("Carrier"));
     }
     
-    private void onTendaClick() {
-        System.out.print("tenda");
-    }
-    
-    private void onToolClick() {
-        System.out.print("tenda");
-    }
-    
-    private void onWearClick() {
-        System.out.print("tenda");
-    }
-    
-    private void onCarrierClick() {
-        System.out.print("tenda");
-    }
-    
-    private void onLightingClick() {
-        System.out.print("tenda");
-    }
-    
-    private void onNavigationClick() {
-        System.out.print("tenda");
+    private void fireRentListByCategoryView(String category) {
+        this.pageController.showRentListByCategory(category);
+        this.categoryDashboardView.close();
     }
 }

@@ -5,39 +5,20 @@
 package com.mycompany.akamsa.view.ui;
 
 import com.mycompany.akamsa.common.ClickListener;
-import com.mycompany.akamsa.entity.Transaction;
 import com.mycompany.akamsa.view.SidebarView;
-import com.mycompany.akamsa.view.TransactionView;
-import java.util.List;
-import javax.swing.event.ListSelectionListener;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author ASUS
  */
-public class TransactionUi extends javax.swing.JFrame implements TransactionView, SidebarView {
+public class UpdateItem extends javax.swing.JFrame implements SidebarView {
 
     /**
-     * Creates new form nitip
+     * Creates new form LandingPage
      */
-    public TransactionUi() {
+    public UpdateItem() {
         initComponents();
-        setupTable();
     }
-    
-    private List<Transaction> currentTransactions ;
-    
-    private void setupTable() {
-        String[] columns = {
-            "ID", "Cashier", "Customer", "Phone", "Address", "Total Price",
-            "Start Date", "End Date"
-        };
-
-        DefaultTableModel model = new DefaultTableModel(columns, 0);
-        transactionTable.setModel(model);
-    }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,11 +31,19 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
 
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        transactionTable = new javax.swing.JTable();
-        jLabel6 = new javax.swing.JLabel();
-        searchTextField = new javax.swing.JTextField();
-        searchButton = new javax.swing.JButton();
+        namaLabel2 = new javax.swing.JLabel();
+        idTextField = new javax.swing.JTextField();
+        namaLabel3 = new javax.swing.JLabel();
+        namaTextField = new javax.swing.JTextField();
+        namaLabel4 = new javax.swing.JLabel();
+        hargaTextField = new javax.swing.JTextField();
+        namaLabel5 = new javax.swing.JLabel();
+        stokTextField = new javax.swing.JTextField();
+        namaLabel6 = new javax.swing.JLabel();
+        kategoriComboBox = new javax.swing.JComboBox<>();
+        namaLabel1 = new javax.swing.JLabel();
+        imageTextField = new javax.swing.JTextField();
+        confirmButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -70,29 +59,63 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
         jPanel3.setBackground(new java.awt.Color(240, 247, 247));
 
         jLabel1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jLabel1.setText("Transaksi");
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Update Item");
 
-        transactionTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(transactionTable);
+        namaLabel2.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        namaLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        namaLabel2.setText("Id : ");
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel6.setText("Search");
+        idTextField.setEditable(false);
+        idTextField.setBackground(new java.awt.Color(255, 255, 255));
+        idTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        idTextField.setForeground(new java.awt.Color(0, 0, 0));
 
-        searchTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        namaLabel3.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        namaLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        namaLabel3.setText("Nama Barang :");
 
-        searchButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
-        searchButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        searchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-search-25.png"))); // NOI18N
+        namaTextField.setBackground(new java.awt.Color(255, 255, 255));
+        namaTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        namaTextField.setForeground(new java.awt.Color(0, 0, 0));
+
+        namaLabel4.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        namaLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        namaLabel4.setText("Harga per Hari :");
+
+        hargaTextField.setBackground(new java.awt.Color(255, 255, 255));
+        hargaTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        hargaTextField.setForeground(new java.awt.Color(0, 0, 0));
+
+        namaLabel5.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        namaLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        namaLabel5.setText("Stok :");
+
+        stokTextField.setBackground(new java.awt.Color(255, 255, 255));
+        stokTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        stokTextField.setForeground(new java.awt.Color(0, 0, 0));
+
+        namaLabel6.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        namaLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        namaLabel6.setText("Kategori :");
+
+        kategoriComboBox.setBackground(new java.awt.Color(255, 255, 255));
+        kategoriComboBox.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        kategoriComboBox.setForeground(new java.awt.Color(0, 0, 0));
+        kategoriComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tenda dan Atributnya", "Wears", "Carrier dan Tas", "Peralatan/ Perlengkapan", "Pencahayaan", "Navigasi dan Keamanan" }));
+
+        namaLabel1.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        namaLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        namaLabel1.setText("Image : ");
+
+        imageTextField.setBackground(new java.awt.Color(255, 255, 255));
+        imageTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        imageTextField.setForeground(new java.awt.Color(0, 0, 0));
+
+        confirmButton.setBackground(java.awt.Color.orange);
+        confirmButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        confirmButton.setForeground(new java.awt.Color(255, 255, 255));
+        confirmButton.setText("Update");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -100,31 +123,65 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(searchButton))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 785, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(84, Short.MAX_VALUE))
+                        .addComponent(namaLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(idTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(namaLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(namaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(namaLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(hargaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(namaLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(stokTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(namaLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(kategoriComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(namaLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(imageTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(509, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(38, 38, 38)
+                .addComponent(jLabel1)
+                .addGap(32, 32, 32)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(searchButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel6)
-                        .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1)))
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                    .addComponent(namaLabel2)
+                    .addComponent(idTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(namaLabel3)
+                    .addComponent(namaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(namaLabel4)
+                    .addComponent(hargaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(namaLabel5)
+                    .addComponent(stokTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(namaLabel6)
+                    .addComponent(kategoriComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addComponent(namaLabel1)
+                .addGap(8, 8, 8)
+                .addComponent(imageTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(162, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 0, 900, 600));
@@ -224,110 +281,14 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TransactionView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateItem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TransactionView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateItem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TransactionView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateItem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TransactionView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateItem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -364,9 +325,7 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                TransactionUi ui = new TransactionUi();
-                ui.setLocationRelativeTo(null);
-                ui.setVisible(true);
+                new UpdateItem().setVisible(true);
             }
         });
     }
@@ -377,58 +336,25 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
     private javax.swing.JButton btnPurchaseCart;
     private javax.swing.JButton btnSewa;
     private javax.swing.JButton btnTransaksi;
+    private javax.swing.JButton confirmButton;
+    private javax.swing.JTextField hargaTextField;
+    private javax.swing.JTextField idTextField;
+    private javax.swing.JTextField imageTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton searchButton;
-    private javax.swing.JTextField searchTextField;
-    private javax.swing.JTable transactionTable;
+    private javax.swing.JComboBox<String> kategoriComboBox;
+    private javax.swing.JLabel namaLabel1;
+    private javax.swing.JLabel namaLabel2;
+    private javax.swing.JLabel namaLabel3;
+    private javax.swing.JLabel namaLabel4;
+    private javax.swing.JLabel namaLabel5;
+    private javax.swing.JLabel namaLabel6;
+    private javax.swing.JTextField namaTextField;
+    private javax.swing.JTextField stokTextField;
     // End of variables declaration//GEN-END:variables
-
-    @Override
-    public void open() {
-        this.setVisible(true);
-    }
-
-    @Override
-    public void setTransactionData(List<Transaction> transactions) {
-        this.currentTransactions = transactions;
-        
-        DefaultTableModel model = (DefaultTableModel) transactionTable.getModel();
-        model.setRowCount(0);
-
-        for (Transaction t : transactions) {
-            model.addRow(new Object[]{
-                t.getId(),
-                t.getCashier().getName(),
-                t.getCustomer(),
-                t.getNumberPhone(),
-                t.getAddress(),
-                t.getTotalPrice(),
-                t.getStartDate(),
-                t.getEndDate(),
-            });
-        }
-    }
-
-    @Override
-    public String getSearchInput() {
-        return searchTextField.getText();
-    }
-
-    @Override
-    public void addSearchClickListener(ClickListener listener) {
-        this.searchButton.addActionListener(e -> listener.onClick());
-    }
-
-    @Override
-    public void close() {
-        this.dispose();
-    }
 
     @Override
     public void addHomePageClickListener(ClickListener listener) {
@@ -451,21 +377,8 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
     }
 
     @Override
-    public void setTransactionTableClickListener(ListSelectionListener listener) {
-        this.transactionTable.getSelectionModel().addListSelectionListener(listener);
-    }
-
-    @Override
-    public int getSelectedRowIndex() {
-        return this.transactionTable.getSelectedRow();
-    }
-
-    @Override
-    public Transaction getTransactionByRow(int row) {
-        if (currentTransactions != null && row >= 0 && row < currentTransactions.size()) {
-            return currentTransactions.get(row);
-        }
-        return null;
+    public void close() {
+        this.dispose();
     }
     
     @Override

@@ -8,6 +8,8 @@ import com.mycompany.akamsa.presenter.CategoryDashboardPresenter;
 import com.mycompany.akamsa.presenter.LoginPresenter;
 import com.mycompany.akamsa.presenter.PurchaseCartPresenter;
 import com.mycompany.akamsa.presenter.RentItemDetailPresenter;
+import com.mycompany.akamsa.presenter.RentListByCategoryPresenter;
+import com.mycompany.akamsa.presenter.SidebarPresenter;
 import com.mycompany.akamsa.presenter.SignUpPresenter;
 import com.mycompany.akamsa.presenter.TransactionPresenter;
 import com.mycompany.akamsa.repository.cart.CartRepository;
@@ -20,10 +22,14 @@ import com.mycompany.akamsa.repository.user.UserRepository;
 import com.mycompany.akamsa.repository.user.UserRepositoryFactory;
 import com.mycompany.akamsa.view.PurchaseCartView;
 import com.mycompany.akamsa.view.RentItemDetailView;
+import com.mycompany.akamsa.view.RentListByCategoryView;
 import com.mycompany.akamsa.view.TransactionView;
 import com.mycompany.akamsa.view.auth.LoginUi;
 import com.mycompany.akamsa.view.auth.SignUp;
 import com.mycompany.akamsa.view.ui.CategoryDashboardUi;
+import com.mycompany.akamsa.view.ui.RentItemDetailUi;
+import com.mycompany.akamsa.view.ui.RentListByCategoryUi;
+import com.mycompany.akamsa.view.ui.TransactionUi;
 
 /**
  *
@@ -60,6 +66,9 @@ public class PageController {
         CategoryDashboardUi categoryDashboardView = new CategoryDashboardUi();
         categoryDashboardView.setVisible(true);
         
+        SidebarPresenter sidebarPresenter = new SidebarPresenter(categoryDashboardView, this);
+        sidebarPresenter.init();
+        
         CategoryDashboardPresenter categoryDashboardPresenter = new CategoryDashboardPresenter(categoryDashboardView, this);
     }
     
@@ -70,13 +79,22 @@ public class PageController {
     }
     
     public void showRentItemDetail(int id) {
-        RentItemDetailView view = null;
+        RentItemDetailView view = new RentItemDetailUi();
         RentItemDetailPresenter rentItemDetailPresenter = new RentItemDetailPresenter(id, view, this.itemRepository);
     }
     
     public void showTransaction() {
-        TransactionView view = null;
+        TransactionUi view = new TransactionUi();
+        
+        SidebarPresenter sidebarPresenter = new SidebarPresenter(view, this);
+        sidebarPresenter.init();
         
         TransactionPresenter transactionPresenter = new TransactionPresenter(view, this.transactionRepository);
+    }
+    
+    public void showRentListByCategory(String category) {
+        RentListByCategoryView view = new RentListByCategoryUi();
+        
+        RentListByCategoryPresenter rentListByCategoryPresenter = new RentListByCategoryPresenter(category, view, this.itemRepository);
     }
 }

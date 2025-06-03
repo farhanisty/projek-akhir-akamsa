@@ -7,6 +7,7 @@ package com.mycompany.akamsa.view;
 import com.mycompany.akamsa.common.ClickListener;
 import com.mycompany.akamsa.entity.Cart;
 import java.util.List;
+import javax.swing.event.ListSelectionListener;
 
 /**
  *
@@ -36,4 +37,9 @@ public interface PurchaseCartView {
     public void showMessage(String message);
     
     public void close();
+    
+    
+    public void setCartTableClickListener(ListSelectionListener listener);
+    public int getSelectedRowIndex();
+    public Cart getCartByRow(int row);
 }

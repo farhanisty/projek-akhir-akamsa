@@ -4,17 +4,37 @@
  */
 package com.mycompany.akamsa.view.ui;
 
+import com.mycompany.akamsa.common.ClickListener;
+import com.mycompany.akamsa.entity.Item;
+import com.mycompany.akamsa.view.RentListByCategoryView;
+import com.mycompany.akamsa.view.SidebarView;
+import java.util.List;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ASUS
  */
-public class SewaTabel extends javax.swing.JFrame {
+public class RentListByCategoryUi extends javax.swing.JFrame implements RentListByCategoryView, SidebarView {
 
     /**
      * Creates new form nitip
      */
-    public SewaTabel() {
+    public RentListByCategoryUi() {
         initComponents();
+        setupTable();
+    }
+    
+    private List<Item> currentItems;
+    
+    private void setupTable() {
+        String[] columns = {
+            "ID", "Nama Barang", "Harga per Bulan", "Stok"
+        };
+
+        DefaultTableModel model = new DefaultTableModel(columns, 0);
+        itemTable.setModel(model);
     }
 
     /**
@@ -27,32 +47,33 @@ public class SewaTabel extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        sewaLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        itemTable = new javax.swing.JTable();
+        tambahButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        sewaButton = new javax.swing.JButton();
+        updateButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         btnHomePage = new javax.swing.JButton();
-        btnTransaksi = new javax.swing.JButton();
+        btnPurchaseCart = new javax.swing.JButton();
         btnSewa = new javax.swing.JButton();
         btnLogOut = new javax.swing.JButton();
-        btnTransaksi2 = new javax.swing.JButton();
+        btnTransaksi = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(240, 247, 247));
 
-        jLabel1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Sewa ?Kategori");
+        sewaLabel.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        sewaLabel.setText("Sewa ?Kategori");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        itemTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -63,24 +84,31 @@ public class SewaTabel extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(itemTable);
 
-        jButton1.setBackground(new java.awt.Color(5, 54, 44));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Tambah Barang");
+        tambahButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        tambahButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        tambahButton.setForeground(new java.awt.Color(255, 255, 255));
+        tambahButton.setText("Tambah Barang");
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Search");
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
         jButton3.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
         jButton3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-search-25.png"))); // NOI18N
+
+        sewaButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        sewaButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        sewaButton.setForeground(new java.awt.Color(255, 255, 255));
+        sewaButton.setText("Sewa");
+
+        updateButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Yellow"));
+        updateButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        updateButton.setForeground(new java.awt.Color(255, 255, 255));
+        updateButton.setText("Update");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -90,15 +118,20 @@ public class SewaTabel extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1)
-                    .addComponent(jButton1)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(sewaLabel)
                         .addGap(394, 394, 394)
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)))
+                        .addComponent(jButton3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(tambahButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(sewaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(84, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -108,13 +141,16 @@ public class SewaTabel extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
+                        .addComponent(sewaLabel)
                         .addComponent(jLabel6)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tambahButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sewaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
@@ -136,15 +172,15 @@ public class SewaTabel extends javax.swing.JFrame {
         btnHomePage.setText("Home Page");
         jPanel2.add(btnHomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 200, 40));
 
-        btnTransaksi.setBackground(new java.awt.Color(5, 54, 44));
-        btnTransaksi.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        btnTransaksi.setText("Purchase Cart");
-        btnTransaksi.addActionListener(new java.awt.event.ActionListener() {
+        btnPurchaseCart.setBackground(new java.awt.Color(5, 54, 44));
+        btnPurchaseCart.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnPurchaseCart.setText("Purchase Cart");
+        btnPurchaseCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTransaksiActionPerformed(evt);
+                btnPurchaseCartActionPerformed(evt);
             }
         });
-        jPanel2.add(btnTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 200, 40));
+        jPanel2.add(btnPurchaseCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 200, 40));
 
         btnSewa.setBackground(new java.awt.Color(5, 54, 44));
         btnSewa.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
@@ -166,15 +202,15 @@ public class SewaTabel extends javax.swing.JFrame {
         });
         jPanel2.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 200, 40));
 
-        btnTransaksi2.setBackground(new java.awt.Color(5, 54, 44));
-        btnTransaksi2.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        btnTransaksi2.setText("Transaksi");
-        btnTransaksi2.addActionListener(new java.awt.event.ActionListener() {
+        btnTransaksi.setBackground(new java.awt.Color(5, 54, 44));
+        btnTransaksi.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnTransaksi.setText("Transaksi");
+        btnTransaksi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTransaksi2ActionPerformed(evt);
+                btnTransaksiActionPerformed(evt);
             }
         });
-        jPanel2.add(btnTransaksi2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 200, 40));
+        jPanel2.add(btnTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 200, 40));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
 
@@ -182,9 +218,9 @@ public class SewaTabel extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransaksiActionPerformed
+    private void btnPurchaseCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPurchaseCartActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnTransaksiActionPerformed
+    }//GEN-LAST:event_btnPurchaseCartActionPerformed
 
     private void btnSewaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSewaActionPerformed
         // TODO add your handling code here:
@@ -194,9 +230,9 @@ public class SewaTabel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLogOutActionPerformed
 
-    private void btnTransaksi2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransaksi2ActionPerformed
+    private void btnTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransaksiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnTransaksi2ActionPerformed
+    }//GEN-LAST:event_btnTransaksiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,14 +251,46 @@ public class SewaTabel extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SewaTabel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentListByCategoryUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SewaTabel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentListByCategoryUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SewaTabel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentListByCategoryUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SewaTabel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentListByCategoryUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -259,7 +327,7 @@ public class SewaTabel extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                SewaTabel ui = new SewaTabel();
+                RentListByCategoryUi ui = new RentListByCategoryUi();
                 ui.setLocationRelativeTo(null);
                 ui.setVisible(true);
             }
@@ -269,19 +337,94 @@ public class SewaTabel extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHomePage;
     private javax.swing.JButton btnLogOut;
+    private javax.swing.JButton btnPurchaseCart;
     private javax.swing.JButton btnSewa;
     private javax.swing.JButton btnTransaksi;
-    private javax.swing.JButton btnTransaksi2;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTable itemTable;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton sewaButton;
+    private javax.swing.JLabel sewaLabel;
+    private javax.swing.JButton tambahButton;
+    private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void open() {
+        this.setVisible(true);
+    }
+
+    @Override
+    public void setItems(List<Item> items) {
+        this.currentItems = items;
+
+        DefaultTableModel model = (DefaultTableModel) itemTable.getModel();
+        model.setRowCount(0);
+        
+        sewaLabel.setText("Kategori " + items.get(0).getCategory());
+
+        for (Item i : items) {
+            model.addRow(new Object[]{
+                i.getId(),
+                i.getName(),
+                i.getPrice(),
+                i.getStock()
+            });
+        }
+
+    }
+
+    @Override
+    public void close() {
+        this.dispose();
+    }
+
+    @Override
+    public void setItemTableClickListener(ListSelectionListener listener) {
+        this.itemTable.getSelectionModel().addListSelectionListener(listener);
+    }
+
+    @Override
+    public int getSelectedRowIndex() {
+        return this.itemTable.getSelectedRow();
+    }
+
+    @Override
+    public Item getItemByRow(int row) {
+        if (currentItems != null && row >= 0 && row < currentItems.size()) {
+            return currentItems.get(row);
+        }
+        return null;
+    }
+
+    @Override
+    public void addHomePageClickListener(ClickListener listener) {
+        this.btnHomePage.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addRentPageClickListener(ClickListener listener) {
+        this.btnSewa.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addCartPageClickListener(ClickListener listener) {
+        this.btnPurchaseCart.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addTransactionPageClickListener(ClickListener listener) {
+        this.btnTransaksi.addActionListener(e -> listener.onClick());
+    }
+    
+    @Override
+    public void addButtonLogOutClickListener(ClickListener listener) {
+        this.btnLogOut.addActionListener(e -> listener.onClick());
+    }
 }
