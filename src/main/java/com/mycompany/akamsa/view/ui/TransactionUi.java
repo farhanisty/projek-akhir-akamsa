@@ -58,10 +58,10 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         btnHomePage = new javax.swing.JButton();
-        btnTransaksi = new javax.swing.JButton();
+        btnPurchaseCart = new javax.swing.JButton();
         btnSewa = new javax.swing.JButton();
         btnLogOut = new javax.swing.JButton();
-        btnTransaksi2 = new javax.swing.JButton();
+        btnTransaksi = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -144,15 +144,15 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
         btnHomePage.setText("Home Page");
         jPanel2.add(btnHomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 200, 40));
 
-        btnTransaksi.setBackground(new java.awt.Color(5, 54, 44));
-        btnTransaksi.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        btnTransaksi.setText("Purchase Cart");
-        btnTransaksi.addActionListener(new java.awt.event.ActionListener() {
+        btnPurchaseCart.setBackground(new java.awt.Color(5, 54, 44));
+        btnPurchaseCart.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnPurchaseCart.setText("Purchase Cart");
+        btnPurchaseCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTransaksiActionPerformed(evt);
+                btnPurchaseCartActionPerformed(evt);
             }
         });
-        jPanel2.add(btnTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 200, 40));
+        jPanel2.add(btnPurchaseCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 200, 40));
 
         btnSewa.setBackground(new java.awt.Color(5, 54, 44));
         btnSewa.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
@@ -174,15 +174,15 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
         });
         jPanel2.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 200, 40));
 
-        btnTransaksi2.setBackground(new java.awt.Color(5, 54, 44));
-        btnTransaksi2.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        btnTransaksi2.setText("Transaksi");
-        btnTransaksi2.addActionListener(new java.awt.event.ActionListener() {
+        btnTransaksi.setBackground(new java.awt.Color(5, 54, 44));
+        btnTransaksi.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnTransaksi.setText("Transaksi");
+        btnTransaksi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTransaksi2ActionPerformed(evt);
+                btnTransaksiActionPerformed(evt);
             }
         });
-        jPanel2.add(btnTransaksi2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 200, 40));
+        jPanel2.add(btnTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 200, 40));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
 
@@ -190,9 +190,9 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransaksiActionPerformed
+    private void btnPurchaseCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPurchaseCartActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnTransaksiActionPerformed
+    }//GEN-LAST:event_btnPurchaseCartActionPerformed
 
     private void btnSewaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSewaActionPerformed
         // TODO add your handling code here:
@@ -202,9 +202,9 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLogOutActionPerformed
 
-    private void btnTransaksi2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransaksi2ActionPerformed
+    private void btnTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransaksiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnTransaksi2ActionPerformed
+    }//GEN-LAST:event_btnTransaksiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -373,9 +373,9 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHomePage;
     private javax.swing.JButton btnLogOut;
+    private javax.swing.JButton btnPurchaseCart;
     private javax.swing.JButton btnSewa;
     private javax.swing.JButton btnTransaksi;
-    private javax.swing.JButton btnTransaksi2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -431,21 +431,21 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
 
     @Override
     public void addHomePageClickListener(ClickListener listener) {
-        this.btnTransaksi2.addActionListener(e -> listener.onClick());
+        this.btnHomePage.addActionListener(e -> listener.onClick());
     }
 
     @Override
     public void addRentPageClickListener(ClickListener listener) {
-        this.btnTransaksi2.addActionListener(e -> listener.onClick());
+        this.btnSewa.addActionListener(e -> listener.onClick());
     }
 
     @Override
     public void addCartPageClickListener(ClickListener listener) {
-        this.btnTransaksi2.addActionListener(e -> listener.onClick());
+        this.btnPurchaseCart.addActionListener(e -> listener.onClick());
     }
 
     @Override
     public void addTransactionPageClickListener(ClickListener listener) {
-        this.btnTransaksi2.addActionListener(e -> listener.onClick());
+        this.btnTransaksi.addActionListener(e -> listener.onClick());
     }
 }

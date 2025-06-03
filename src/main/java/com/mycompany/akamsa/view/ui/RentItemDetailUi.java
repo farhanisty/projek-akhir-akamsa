@@ -7,13 +7,14 @@ package com.mycompany.akamsa.view.ui;
 import com.mycompany.akamsa.common.ClickListener;
 import com.mycompany.akamsa.entity.Item;
 import com.mycompany.akamsa.view.RentItemDetailView;
+import com.mycompany.akamsa.view.SidebarView;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author ASUS
  */
-public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDetailView {
+public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDetailView, SidebarView {
 
     /**
      * Creates new form nitip
@@ -31,14 +32,6 @@ public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDeta
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        btnHomePage = new javax.swing.JButton();
-        btnTransaksi = new javax.swing.JButton();
-        btnSewa = new javax.swing.JButton();
-        btnLogOut = new javax.swing.JButton();
-        btnTransaksi2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         namaLabel = new javax.swing.JLabel();
         imageLabel = new javax.swing.JLabel();
@@ -50,68 +43,17 @@ public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDeta
         kategoriLabel = new javax.swing.JLabel();
         idLabel = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        btnHomePage = new javax.swing.JButton();
+        btnPurchaseCart = new javax.swing.JButton();
+        btnSewa = new javax.swing.JButton();
+        btnLogOut = new javax.swing.JButton();
+        btnTransaksi = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel2.setBackground(new java.awt.Color(5, 54, 44));
-        jPanel2.setMinimumSize(new java.awt.Dimension(200, 600));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LogoBig.png"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
-
-        jLabel10.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Akamsa");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
-
-        btnHomePage.setBackground(new java.awt.Color(5, 54, 44));
-        btnHomePage.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        btnHomePage.setText("Home Page");
-        jPanel2.add(btnHomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 200, 40));
-
-        btnTransaksi.setBackground(new java.awt.Color(5, 54, 44));
-        btnTransaksi.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        btnTransaksi.setText("Purchase Cart");
-        btnTransaksi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTransaksiActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 200, 40));
-
-        btnSewa.setBackground(new java.awt.Color(5, 54, 44));
-        btnSewa.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        btnSewa.setText("Sewa");
-        btnSewa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSewaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnSewa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 200, 40));
-
-        btnLogOut.setBackground(new java.awt.Color(5, 54, 44));
-        btnLogOut.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        btnLogOut.setText("Log Out");
-        btnLogOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogOutActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 200, 40));
-
-        btnTransaksi2.setBackground(new java.awt.Color(5, 54, 44));
-        btnTransaksi2.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        btnTransaksi2.setText("Transaksi");
-        btnTransaksi2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTransaksi2ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnTransaksi2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 200, 40));
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
 
         jPanel3.setBackground(new java.awt.Color(240, 247, 247));
         jPanel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -169,13 +111,71 @@ public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDeta
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 0, 900, 600));
 
+        jPanel2.setBackground(new java.awt.Color(5, 54, 44));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LogoBig.png"))); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Akamsa");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+
+        btnHomePage.setBackground(new java.awt.Color(5, 54, 44));
+        btnHomePage.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnHomePage.setText("Home Page");
+        jPanel2.add(btnHomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 200, 40));
+
+        btnPurchaseCart.setBackground(new java.awt.Color(5, 54, 44));
+        btnPurchaseCart.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnPurchaseCart.setText("Purchase Cart");
+        btnPurchaseCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPurchaseCartActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnPurchaseCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 200, 40));
+
+        btnSewa.setBackground(new java.awt.Color(5, 54, 44));
+        btnSewa.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnSewa.setText("Sewa");
+        btnSewa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSewaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnSewa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 200, 40));
+
+        btnLogOut.setBackground(new java.awt.Color(5, 54, 44));
+        btnLogOut.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnLogOut.setText("Log Out");
+        btnLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogOutActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 200, 40));
+
+        btnTransaksi.setBackground(new java.awt.Color(5, 54, 44));
+        btnTransaksi.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnTransaksi.setText("Transaksi");
+        btnTransaksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTransaksiActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 200, 40));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransaksiActionPerformed
+    private void btnPurchaseCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPurchaseCartActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnTransaksiActionPerformed
+    }//GEN-LAST:event_btnPurchaseCartActionPerformed
 
     private void btnSewaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSewaActionPerformed
         // TODO add your handling code here:
@@ -185,9 +185,9 @@ public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDeta
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLogOutActionPerformed
 
-    private void btnTransaksi2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransaksi2ActionPerformed
+    private void btnTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransaksiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnTransaksi2ActionPerformed
+    }//GEN-LAST:event_btnTransaksiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -358,9 +358,9 @@ public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDeta
     private javax.swing.JTextField beliTextField;
     private javax.swing.JButton btnHomePage;
     private javax.swing.JButton btnLogOut;
+    private javax.swing.JButton btnPurchaseCart;
     private javax.swing.JButton btnSewa;
     private javax.swing.JButton btnTransaksi;
-    private javax.swing.JButton btnTransaksi2;
     private javax.swing.JLabel hargaLabel;
     private javax.swing.JLabel idLabel;
     private javax.swing.JLabel imageLabel;
@@ -415,5 +415,25 @@ public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDeta
     @Override
     public void close() {
         this.dispose();
+    }
+
+    @Override
+    public void addHomePageClickListener(ClickListener listener) {
+        this.btnHomePage.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addRentPageClickListener(ClickListener listener) {
+        this.btnSewa.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addCartPageClickListener(ClickListener listener) {
+        this.btnPurchaseCart.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addTransactionPageClickListener(ClickListener listener) {
+        this.btnTransaksi.addActionListener(e -> listener.onClick());
     }
 }
