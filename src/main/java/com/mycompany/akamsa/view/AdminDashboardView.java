@@ -21,8 +21,31 @@ public interface AdminDashboardView {
     
     public void addButtonLogOutClickListener(ClickListener listener);
     
+    public void addUpdateClickListener(ClickListener listener);
+    
+    public void addDeleteClickListener(ClickListener listener);
+    
+    public boolean showConfirmation(String message);
+    
+    public String getIdInput();
+    
+    public void setIdInput(String id);
+    
+    public String getUsernameInput();
+    
+    public void setUsernameInput(String username);
+    
+    public boolean getIsAdminInput();
+    
+    public void setIsAdminInput(boolean isAdmin);
+    
+    public boolean getIsVerifiedInput();
+    
+    public void setIsVerifiedInput(boolean isVerified);
     
     public void setUserTableClickListener(ListSelectionListener listener);
     public int getSelectedRowIndex();
     public User getUserbyRow(int row);
+    
+    public void showMessage(String message);
 }

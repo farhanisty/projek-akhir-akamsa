@@ -9,6 +9,7 @@ import com.mycompany.akamsa.common.ClickListener;
 import com.mycompany.akamsa.entity.User;
 import com.mycompany.akamsa.view.AdminDashboardView;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
@@ -72,7 +73,6 @@ public class AdminDashboard extends javax.swing.JFrame implements AdminDashboard
         jPanel3.setBackground(new java.awt.Color(240, 247, 247));
 
         jLabel1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Admin Dashboard");
 
         userTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -89,32 +89,25 @@ public class AdminDashboard extends javax.swing.JFrame implements AdminDashboard
         jScrollPane1.setViewportView(userTable);
 
         idLabel.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        idLabel.setForeground(new java.awt.Color(0, 0, 0));
         idLabel.setText("Id");
 
         idLabel1.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        idLabel1.setForeground(new java.awt.Color(0, 0, 0));
         idLabel1.setText("Username");
 
         idLabel2.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        idLabel2.setForeground(new java.awt.Color(0, 0, 0));
         idLabel2.setText("Is Admin");
 
         idLabel3.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        idLabel3.setForeground(new java.awt.Color(0, 0, 0));
         idLabel3.setText("Is Verified");
 
         idTextField.setEditable(false);
         idTextField.setBackground(new java.awt.Color(255, 255, 255));
         idTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        usernameTextField.setBackground(new java.awt.Color(255, 255, 255));
         usernameTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        isAdminComboBox.setBackground(new java.awt.Color(255, 255, 255));
         isAdminComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "True", "False" }));
 
-        isVerifiedComboBox.setBackground(new java.awt.Color(255, 255, 255));
         isVerifiedComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "True", "False" }));
 
         updateButton.setBackground(java.awt.Color.orange);
@@ -340,5 +333,66 @@ public class AdminDashboard extends javax.swing.JFrame implements AdminDashboard
     @Override
     public void addButtonLogOutClickListener(ClickListener listener) {
         this.btnLogOut.addActionListener((e) -> listener.onClick());
+    }
+
+    @Override
+    public boolean showConfirmation(String message) {
+        int input = JOptionPane.showConfirmDialog(null, message);
+        return input == 0;
+    }
+
+    @Override
+    public void addUpdateClickListener(ClickListener listener) {
+        this.updateButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addDeleteClickListener(ClickListener listener) {
+        this.deleteButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public String getIdInput() {
+        return this.idTextField.getText();
+    }
+
+    @Override
+    public void setIdInput(String id) {
+        this.idTextField.setText(id);
+    }
+
+    @Override
+    public String getUsernameInput() {
+        return this.usernameTextField.getText();
+    }
+
+    @Override
+    public void setUsernameInput(String username) {
+        this.usernameTextField.setText(username);
+    }
+
+    @Override
+    public boolean getIsAdminInput() {
+        return this.isAdminComboBox.getSelectedItem().equals("True");
+    }
+
+    @Override
+    public void setIsAdminInput(boolean isAdmin) {
+        this.isAdminComboBox.setSelectedIndex((isAdmin) ? 0 : 1);
+    }
+
+    @Override
+    public boolean getIsVerifiedInput() {
+        return this.isVerifiedComboBox.getSelectedIndex() == 0;
+    }
+
+    @Override
+    public void setIsVerifiedInput(boolean isVerified) {
+        this.isVerifiedComboBox.setSelectedIndex(isVerified ? 0 : 1);
+    }
+
+    @Override
+    public void showMessage(String message) {
+        JOptionPane.showMessageDialog(this, message);
     }
 }
