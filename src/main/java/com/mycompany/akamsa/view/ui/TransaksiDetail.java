@@ -32,7 +32,7 @@ public class TransaksiDetail extends javax.swing.JFrame implements SidebarView {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        detailTable = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -50,7 +50,7 @@ public class TransaksiDetail extends javax.swing.JFrame implements SidebarView {
         jLabel1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         jLabel1.setText("Transaksi Detail");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        detailTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -61,7 +61,7 @@ public class TransaksiDetail extends javax.swing.JFrame implements SidebarView {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(detailTable);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -334,13 +334,13 @@ public class TransaksiDetail extends javax.swing.JFrame implements SidebarView {
     private javax.swing.JButton btnPurchaseCart;
     private javax.swing.JButton btnSewa;
     private javax.swing.JButton btnTransaksi;
+    private javax.swing.JTable detailTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
     @Override
