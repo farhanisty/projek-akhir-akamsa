@@ -399,7 +399,7 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
         for (Transaction t : transactions) {
             model.addRow(new Object[]{
                 t.getId(),
-                t.getCashier().getName(),
+                t.getCashier(),
                 t.getCustomer(),
                 t.getNumberPhone(),
                 t.getAddress(),
