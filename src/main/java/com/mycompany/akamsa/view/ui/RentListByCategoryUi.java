@@ -362,6 +362,10 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
 
     @Override
     public void setItems(List<Item> items) {
+        if(items.isEmpty()) {
+            return;
+        }
+        
         this.currentItems = items;
 
         DefaultTableModel model = (DefaultTableModel) itemTable.getModel();
