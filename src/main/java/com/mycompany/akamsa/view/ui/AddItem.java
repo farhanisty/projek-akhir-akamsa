@@ -8,12 +8,12 @@ package com.mycompany.akamsa.view.ui;
  *
  * @author ASUS
  */
-public class AddOrEditBarang extends javax.swing.JFrame {
+public class AddItem extends javax.swing.JFrame {
 
     /**
      * Creates new form LandingPage
      */
-    public AddOrEditBarang() {
+    public AddItem() {
         initComponents();
     }
 
@@ -115,7 +115,7 @@ public class AddOrEditBarang extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("?Add/ ?Edit");
+        jLabel1.setText("Add Item");
 
         namaLabel2.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
         namaLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -170,7 +170,7 @@ public class AddOrEditBarang extends javax.swing.JFrame {
         confirmButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
         confirmButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         confirmButton.setForeground(new java.awt.Color(255, 255, 255));
-        confirmButton.setText("Confirm");
+        confirmButton.setText("Add");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -278,14 +278,22 @@ public class AddOrEditBarang extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddOrEditBarang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddItem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddOrEditBarang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddItem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddOrEditBarang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddItem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddOrEditBarang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddItem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -298,7 +306,7 @@ public class AddOrEditBarang extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddOrEditBarang().setVisible(true);
+                new AddItem().setVisible(true);
             }
         });
     }

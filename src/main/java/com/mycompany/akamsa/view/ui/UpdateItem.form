@@ -265,7 +265,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="?Add/ ?Edit"/>
+            <Property name="text" type="java.lang.String" value="Update Item"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="namaLabel2">
@@ -429,7 +429,7 @@
         <Component class="javax.swing.JButton" name="confirmButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="54" green="9c" id="Actions.Green" palette="3" red="49" type="palette"/>
+              <Color blue="0" green="c8" id="orange" palette="1" red="ff" type="palette"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="14" style="1"/>
@@ -437,7 +437,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Confirm"/>
+            <Property name="text" type="java.lang.String" value="Update"/>
           </Properties>
         </Component>
       </SubComponents>
