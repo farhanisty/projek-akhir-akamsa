@@ -380,4 +380,9 @@ public class UpdateItem extends javax.swing.JFrame implements SidebarView {
     public void close() {
         this.dispose();
     }
+    
+    @Override
+    public void addButtonLogOutClickListener(ClickListener listener) {
+        this.btnLogOut.addActionListener(e -> listener.onClick());
+    }
 }

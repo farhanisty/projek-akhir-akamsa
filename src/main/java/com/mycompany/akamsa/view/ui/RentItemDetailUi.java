@@ -436,4 +436,9 @@ public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDeta
     public void addTransactionPageClickListener(ClickListener listener) {
         this.btnTransaksi.addActionListener(e -> listener.onClick());
     }
+    
+    @Override
+    public void addButtonLogOutClickListener(ClickListener listener) {
+        this.btnLogOut.addActionListener(e -> listener.onClick());
+    }
 }

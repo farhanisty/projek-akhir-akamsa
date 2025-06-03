@@ -467,4 +467,9 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
         }
         return null;
     }
+    
+    @Override
+    public void addButtonLogOutClickListener(ClickListener listener) {
+        this.btnLogOut.addActionListener(e -> listener.onClick());
+    }
 }

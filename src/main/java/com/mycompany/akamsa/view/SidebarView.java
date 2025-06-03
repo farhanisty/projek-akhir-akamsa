@@ -19,5 +19,7 @@ public interface SidebarView {
     
     public void addTransactionPageClickListener(ClickListener listener);
     
+    public void addButtonLogOutClickListener(ClickListener listener);
+    
     public void close();
 }

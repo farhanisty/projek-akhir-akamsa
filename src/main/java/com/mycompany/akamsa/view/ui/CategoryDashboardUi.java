@@ -451,4 +451,9 @@ public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryD
     public void addTransactionPageClickListener(ClickListener listener) {
         this.btnTransaksi.addActionListener(e -> listener.onClick());
     }
+    
+    @Override
+    public void addButtonLogOutClickListener(ClickListener listener) {
+        this.btnLogOut.addActionListener(e -> listener.onClick());
+    }
 }

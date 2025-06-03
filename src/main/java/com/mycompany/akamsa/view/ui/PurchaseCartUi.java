@@ -559,4 +559,9 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
         }
         return null;
     }
+    
+    @Override
+    public void addButtonLogOutClickListener(ClickListener listener) {
+        this.btnLogOut.addActionListener(e -> listener.onClick());
+    }
 }
