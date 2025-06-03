@@ -6,6 +6,7 @@ package com.mycompany.akamsa.view;
 
 import com.mycompany.akamsa.entity.Item;
 import java.util.List;
+import javax.swing.event.ListSelectionListener;
 
 /**
  *
@@ -17,4 +18,9 @@ public interface RentListByCategoryView {
     public void setItems(List<Item> items);
     
     public void close();
+    
+    
+    public void setItemTableClickListener(ListSelectionListener listener);
+    public int getSelectedRowIndex();
+    public Item getItemByRow(int row);
 }

@@ -7,6 +7,8 @@ package com.mycompany.akamsa.view.ui;
 import com.mycompany.akamsa.entity.Item;
 import com.mycompany.akamsa.view.RentListByCategoryView;
 import java.util.List;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,6 +21,18 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
      */
     public RentListByCategoryUi() {
         initComponents();
+        setupTable();
+    }
+    
+    private List<Item> currentItems;
+    
+    private void setupTable() {
+        String[] columns = {
+            "ID", "Nama Barang", "Harga per Bulan", "Stok"
+        };
+
+        DefaultTableModel model = new DefaultTableModel(columns, 0);
+        itemTable.setModel(model);
     }
 
     /**
@@ -31,13 +45,15 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
     private void initComponents() {
 
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        sewaLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        itemTable = new javax.swing.JTable();
+        tambahButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        sewaButton = new javax.swing.JButton();
+        updateButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -52,10 +68,10 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
 
         jPanel3.setBackground(new java.awt.Color(240, 247, 247));
 
-        jLabel1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jLabel1.setText("Sewa ?Kategori");
+        sewaLabel.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        sewaLabel.setText("Sewa ?Kategori");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        itemTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -66,12 +82,12 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(itemTable);
 
-        jButton1.setBackground(new java.awt.Color(5, 54, 44));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Tambah Barang");
+        tambahButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        tambahButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        tambahButton.setForeground(new java.awt.Color(255, 255, 255));
+        tambahButton.setText("Tambah Barang");
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel6.setText("Search");
@@ -82,6 +98,16 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
         jButton3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-search-25.png"))); // NOI18N
 
+        sewaButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        sewaButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        sewaButton.setForeground(new java.awt.Color(255, 255, 255));
+        sewaButton.setText("Sewa");
+
+        updateButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Yellow"));
+        updateButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        updateButton.setForeground(new java.awt.Color(255, 255, 255));
+        updateButton.setText("Update");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -90,15 +116,20 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
                 .addGap(31, 31, 31)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1)
-                    .addComponent(jButton1)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(sewaLabel)
                         .addGap(394, 394, 394)
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)))
+                        .addComponent(jButton3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(tambahButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(sewaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(84, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -108,13 +139,16 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
+                        .addComponent(sewaLabel)
                         .addComponent(jLabel6)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tambahButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sewaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
@@ -304,17 +338,19 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
     private javax.swing.JButton btnSewa;
     private javax.swing.JButton btnTransaksi;
     private javax.swing.JButton btnTransaksi2;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTable itemTable;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton sewaButton;
+    private javax.swing.JLabel sewaLabel;
+    private javax.swing.JButton tambahButton;
+    private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 
     @Override
@@ -324,11 +360,44 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
 
     @Override
     public void setItems(List<Item> items) {
-        System.out.print("jadii");
+        this.currentItems = items;
+
+        DefaultTableModel model = (DefaultTableModel) itemTable.getModel();
+        model.setRowCount(0);
+        
+        sewaLabel.setText("Kategori " + items.get(0).getCategory());
+
+        for (Item i : items) {
+            model.addRow(new Object[]{
+                i.getId(),
+                i.getName(),
+                i.getPrice(),
+                i.getStock()
+            });
+        }
+
     }
 
     @Override
     public void close() {
         this.dispose();
+    }
+
+    @Override
+    public void setItemTableClickListener(ListSelectionListener listener) {
+        this.itemTable.getSelectionModel().addListSelectionListener(listener);
+    }
+
+    @Override
+    public int getSelectedRowIndex() {
+        return this.itemTable.getSelectedRow();
+    }
+
+    @Override
+    public Item getItemByRow(int row) {
+        if (currentItems != null && row >= 0 && row < currentItems.size()) {
+            return currentItems.get(row);
+        }
+        return null;
     }
 }
