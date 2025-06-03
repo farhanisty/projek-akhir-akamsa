@@ -40,31 +40,16 @@ public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDeta
         btnLogOut = new javax.swing.JButton();
         btnTransaksi2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        namaLabel1 = new javax.swing.JLabel();
         namaLabel = new javax.swing.JLabel();
         imageLabel = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        uIdTextField = new javax.swing.JTextField();
         beliTextField = new javax.swing.JTextField();
         stokLabel = new javax.swing.JLabel();
         hargaLabel = new javax.swing.JLabel();
         addKeranjangButton = new javax.swing.JButton();
         kategoriLabel = new javax.swing.JLabel();
         idLabel = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        namaLabel2 = new javax.swing.JLabel();
-        updateButton = new javax.swing.JButton();
-        namaLabel3 = new javax.swing.JLabel();
-        namaLabel4 = new javax.swing.JLabel();
-        namaLabel5 = new javax.swing.JLabel();
-        namaLabel6 = new javax.swing.JLabel();
-        uKategoriComboBox = new javax.swing.JComboBox<>();
-        uStokTextField = new javax.swing.JTextField();
-        uImageTextField = new javax.swing.JTextField();
-        uNamaTextField = new javax.swing.JTextField();
-        uHargaTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -132,16 +117,6 @@ public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDeta
         jPanel3.setForeground(new java.awt.Color(0, 0, 0));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Update Barang");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, -1, -1));
-
-        namaLabel1.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        namaLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        namaLabel1.setText("Image : ");
-        jPanel3.add(namaLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 150, -1));
-
         namaLabel.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         namaLabel.setForeground(new java.awt.Color(0, 0, 0));
         namaLabel.setText("?Nama Barang");
@@ -156,11 +131,6 @@ public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDeta
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Beli");
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 471, -1, -1));
-
-        uIdTextField.setEditable(false);
-        uIdTextField.setBackground(new java.awt.Color(255, 255, 255));
-        uIdTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jPanel3.add(uIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 70, 210, -1));
 
         beliTextField.setBackground(new java.awt.Color(255, 255, 255));
         beliTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -192,65 +162,10 @@ public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDeta
         idLabel.setText("Id : ?");
         jPanel3.add(idLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, -1, -1));
 
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 30, 550));
-
         jLabel4.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Detail Barang");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
-
-        namaLabel2.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        namaLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        namaLabel2.setText("Id : ");
-        jPanel3.add(namaLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 150, -1));
-
-        updateButton.setBackground(java.awt.Color.orange);
-        updateButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        updateButton.setForeground(new java.awt.Color(255, 255, 255));
-        updateButton.setText("Update");
-        jPanel3.add(updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, 100, 40));
-
-        namaLabel3.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        namaLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        namaLabel3.setText("Nama Barang :");
-        jPanel3.add(namaLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 150, -1));
-
-        namaLabel4.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        namaLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        namaLabel4.setText("Harga per Hari :");
-        jPanel3.add(namaLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 150, -1));
-
-        namaLabel5.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        namaLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        namaLabel5.setText("Stok :");
-        jPanel3.add(namaLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 150, -1));
-
-        namaLabel6.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        namaLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        namaLabel6.setText("Kategori :");
-        jPanel3.add(namaLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 150, -1));
-
-        uKategoriComboBox.setBackground(new java.awt.Color(255, 255, 255));
-        uKategoriComboBox.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        uKategoriComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tenda dan Atributnya", "Wears", "Carrier dan Tas", "Peralatan/ Perlengkapan", "Pencahayaan", "Navigasi dan Keamanan" }));
-        jPanel3.add(uKategoriComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 190, 210, -1));
-
-        uStokTextField.setBackground(new java.awt.Color(255, 255, 255));
-        uStokTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jPanel3.add(uStokTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 160, 50, -1));
-
-        uImageTextField.setBackground(new java.awt.Color(255, 255, 255));
-        uImageTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jPanel3.add(uImageTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 250, 360, 110));
-
-        uNamaTextField.setBackground(new java.awt.Color(255, 255, 255));
-        uNamaTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jPanel3.add(uNamaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 210, -1));
-
-        uHargaTextField.setBackground(new java.awt.Color(255, 255, 255));
-        uHargaTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jPanel3.add(uHargaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 130, 210, -1));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 0, 900, 600));
 
@@ -451,28 +366,13 @@ public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDeta
     private javax.swing.JLabel imageLabel;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel kategoriLabel;
     private javax.swing.JLabel namaLabel;
-    private javax.swing.JLabel namaLabel1;
-    private javax.swing.JLabel namaLabel2;
-    private javax.swing.JLabel namaLabel3;
-    private javax.swing.JLabel namaLabel4;
-    private javax.swing.JLabel namaLabel5;
-    private javax.swing.JLabel namaLabel6;
     private javax.swing.JLabel stokLabel;
-    private javax.swing.JTextField uHargaTextField;
-    private javax.swing.JTextField uIdTextField;
-    private javax.swing.JTextField uImageTextField;
-    private javax.swing.JComboBox<String> uKategoriComboBox;
-    private javax.swing.JTextField uNamaTextField;
-    private javax.swing.JTextField uStokTextField;
-    private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 
     @Override
