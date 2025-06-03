@@ -6,12 +6,13 @@ package com.mycompany.akamsa.view.ui;
 
 import com.mycompany.akamsa.common.ClickListener;
 import com.mycompany.akamsa.view.CategoryDashboardView;
+import com.mycompany.akamsa.view.SidebarView;
 
 /**
  *
  * @author ASUS
  */
-public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryDashboardView {
+public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryDashboardView, SidebarView {
 
     /**
      * Creates new form nitip
@@ -441,5 +442,25 @@ public class CategoryDashboardUi extends javax.swing.JFrame implements CategoryD
     @Override
     public void close() {
         this.dispose();
+    }
+
+    @Override
+    public void addHomePageClickListener(ClickListener listener) {
+        this.btnHomePage.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addRentPageClickListener(ClickListener listener) {
+        this.btnSewa.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addCartPageClickListener(ClickListener listener) {
+        this.btnTransaksi.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addTransactionPageClickListener(ClickListener listener) {
+        this.btnTransaksi2.addActionListener(e -> listener.onClick());
     }
 }

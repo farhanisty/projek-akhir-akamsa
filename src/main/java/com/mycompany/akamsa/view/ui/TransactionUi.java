@@ -6,6 +6,7 @@ package com.mycompany.akamsa.view.ui;
 
 import com.mycompany.akamsa.common.ClickListener;
 import com.mycompany.akamsa.entity.Transaction;
+import com.mycompany.akamsa.view.SidebarView;
 import com.mycompany.akamsa.view.TransactionView;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -14,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ASUS
  */
-public class TransactionUi extends javax.swing.JFrame implements TransactionView {
+public class TransactionUi extends javax.swing.JFrame implements TransactionView, SidebarView {
 
     /**
      * Creates new form nitip
@@ -398,7 +399,7 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
         for (Transaction t : transactions) {
             model.addRow(new Object[]{
                 t.getId(),
-                t.getCashier(),
+                t.getCashier().getName(),
                 t.getCustomer(),
                 t.getNumberPhone(),
                 t.getAddress(),
@@ -424,5 +425,25 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
     @Override
     public void close() {
         this.dispose();
+    }
+
+    @Override
+    public void addHomePageClickListener(ClickListener listener) {
+        this.btnTransaksi2.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addRentPageClickListener(ClickListener listener) {
+        this.btnTransaksi2.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addCartPageClickListener(ClickListener listener) {
+        this.btnTransaksi2.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addTransactionPageClickListener(ClickListener listener) {
+        this.btnTransaksi2.addActionListener(e -> listener.onClick());
     }
 }

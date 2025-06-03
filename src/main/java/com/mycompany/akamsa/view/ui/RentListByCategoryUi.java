@@ -4,16 +4,20 @@
  */
 package com.mycompany.akamsa.view.ui;
 
+import com.mycompany.akamsa.entity.Item;
+import com.mycompany.akamsa.view.RentListByCategoryView;
+import java.util.List;
+
 /**
  *
  * @author ASUS
  */
-public class SewaTabel extends javax.swing.JFrame {
+public class RentListByCategoryUi extends javax.swing.JFrame implements RentListByCategoryView {
 
     /**
      * Creates new form nitip
      */
-    public SewaTabel() {
+    public RentListByCategoryUi() {
         initComponents();
     }
 
@@ -49,7 +53,6 @@ public class SewaTabel extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(240, 247, 247));
 
         jLabel1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Sewa ?Kategori");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -71,15 +74,12 @@ public class SewaTabel extends javax.swing.JFrame {
         jButton1.setText("Tambah Barang");
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Search");
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
         jButton3.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
         jButton3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-search-25.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -215,14 +215,46 @@ public class SewaTabel extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SewaTabel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentListByCategoryUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SewaTabel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentListByCategoryUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SewaTabel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentListByCategoryUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SewaTabel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentListByCategoryUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -259,7 +291,7 @@ public class SewaTabel extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                SewaTabel ui = new SewaTabel();
+                RentListByCategoryUi ui = new RentListByCategoryUi();
                 ui.setLocationRelativeTo(null);
                 ui.setVisible(true);
             }
@@ -284,4 +316,19 @@ public class SewaTabel extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void open() {
+        this.setVisible(true);
+    }
+
+    @Override
+    public void setItems(List<Item> items) {
+        System.out.print("jadii");
+    }
+
+    @Override
+    public void close() {
+        this.dispose();
+    }
 }
