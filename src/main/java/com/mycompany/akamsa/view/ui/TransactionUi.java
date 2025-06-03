@@ -25,6 +25,8 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
         setupTable();
     }
     
+    private List<Transaction> currentTransactions ;
+    
     private void setupTable() {
         String[] columns = {
             "ID", "Cashier", "Customer", "Phone", "Address", "Total Price",
@@ -393,13 +395,15 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
 
     @Override
     public void setTransactionData(List<Transaction> transactions) {
+        this.currentTransactions = transactions;
+        
         DefaultTableModel model = (DefaultTableModel) transactionTable.getModel();
         model.setRowCount(0);
 
         for (Transaction t : transactions) {
             model.addRow(new Object[]{
                 t.getId(),
-                t.getCashier(),
+                t.getCashier().getName(),
                 t.getCustomer(),
                 t.getNumberPhone(),
                 t.getAddress(),
