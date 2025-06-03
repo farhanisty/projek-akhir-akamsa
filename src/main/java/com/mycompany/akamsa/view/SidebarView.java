@@ -18,4 +18,6 @@ public interface SidebarView {
     public void addCartPageClickListener(ClickListener listener);
     
     public void addTransactionPageClickListener(ClickListener listener);
+    
+    public void close();
 }
