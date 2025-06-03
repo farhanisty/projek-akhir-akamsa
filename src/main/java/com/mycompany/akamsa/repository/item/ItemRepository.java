@@ -22,4 +22,6 @@ public interface ItemRepository {
     public boolean update(Item item) throws RepositoryException;
     
     public boolean delete(int id) throws RepositoryException;
+    
+    public List<Item> getByCategory(String category) throws RepositoryException;
 }
