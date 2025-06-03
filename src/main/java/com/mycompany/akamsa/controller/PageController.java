@@ -21,9 +21,9 @@ import com.mycompany.akamsa.repository.user.UserRepositoryFactory;
 import com.mycompany.akamsa.view.PurchaseCartView;
 import com.mycompany.akamsa.view.RentItemDetailView;
 import com.mycompany.akamsa.view.TransactionView;
-import com.mycompany.akamsa.view.auth.SignIn;
+import com.mycompany.akamsa.view.auth.LoginUi;
 import com.mycompany.akamsa.view.auth.SignUp;
-import com.mycompany.akamsa.view.ui.SewaKategori;
+import com.mycompany.akamsa.view.ui.CategoryDashboardUi;
 
 /**
  *
@@ -42,7 +42,7 @@ public class PageController {
         this.itemRepository = ItemRepositoryFactory.getSingletone();
     }
     public void showLogin() {
-        SignIn signIn = new SignIn();
+        LoginUi signIn = new LoginUi();
         signIn.setVisible(true);
         
         LoginPresenter loginPresenter = new LoginPresenter(signIn, userRepository, this);
@@ -57,7 +57,7 @@ public class PageController {
     }
     
     public void showCategoryDashboard() {
-        SewaKategori categoryDashboardView = new SewaKategori();
+        CategoryDashboardUi categoryDashboardView = new CategoryDashboardUi();
         categoryDashboardView.setVisible(true);
         
         CategoryDashboardPresenter categoryDashboardPresenter = new CategoryDashboardPresenter(categoryDashboardView, this);

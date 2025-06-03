@@ -4,16 +4,21 @@
  */
 package com.mycompany.akamsa.view.ui;
 
+import com.mycompany.akamsa.common.ClickListener;
+import com.mycompany.akamsa.entity.Item;
+import com.mycompany.akamsa.view.RentItemDetailView;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ASUS
  */
-public class Transaksi extends javax.swing.JFrame {
+public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDetailView {
 
     /**
      * Creates new form nitip
      */
-    public Transaksi() {
+    public RentItemDetailUi() {
         initComponents();
     }
 
@@ -26,13 +31,6 @@ public class Transaksi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -41,73 +39,23 @@ public class Transaksi extends javax.swing.JFrame {
         btnSewa = new javax.swing.JButton();
         btnLogOut = new javax.swing.JButton();
         btnTransaksi2 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        namaLabel = new javax.swing.JLabel();
+        imageLabel = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        beliTextField = new javax.swing.JTextField();
+        stokLabel = new javax.swing.JLabel();
+        hargaLabel = new javax.swing.JLabel();
+        addKeranjangButton = new javax.swing.JButton();
+        kategoriLabel = new javax.swing.JLabel();
+        idLabel = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(240, 247, 247));
-
-        jLabel1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jLabel1.setText("Transaksi");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel6.setText("Search");
-
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-
-        jButton3.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
-        jButton3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-search-25.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 785, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(84, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel6)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1)))
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 0, 900, 600));
-
         jPanel2.setBackground(new java.awt.Color(5, 54, 44));
+        jPanel2.setMinimumSize(new java.awt.Dimension(200, 600));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LogoBig.png"))); // NOI18N
@@ -165,6 +113,62 @@ public class Transaksi extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
 
+        jPanel3.setBackground(new java.awt.Color(240, 247, 247));
+        jPanel3.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        namaLabel.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        namaLabel.setForeground(new java.awt.Color(0, 0, 0));
+        namaLabel.setText("?Nama Barang");
+        jPanel3.add(namaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 150, -1));
+
+        imageLabel.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        imageLabel.setForeground(new java.awt.Color(0, 0, 0));
+        imageLabel.setText("?Image");
+        jPanel3.add(imageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 250, 250));
+
+        jLabel8.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Beli");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 471, -1, -1));
+
+        beliTextField.setBackground(new java.awt.Color(255, 255, 255));
+        beliTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel3.add(beliTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 472, 46, -1));
+
+        stokLabel.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        stokLabel.setForeground(new java.awt.Color(0, 0, 0));
+        stokLabel.setText("Stok : ?");
+        jPanel3.add(stokLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 471, -1, -1));
+
+        hargaLabel.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        hargaLabel.setForeground(new java.awt.Color(0, 0, 0));
+        hargaLabel.setText("Harga per Hari : ?");
+        jPanel3.add(hargaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 443, -1, -1));
+
+        addKeranjangButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        addKeranjangButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        addKeranjangButton.setForeground(new java.awt.Color(255, 255, 255));
+        addKeranjangButton.setText("+ Keranjang");
+        jPanel3.add(addKeranjangButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 533, 120, 35));
+
+        kategoriLabel.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        kategoriLabel.setForeground(new java.awt.Color(0, 0, 0));
+        kategoriLabel.setText("?Kategori");
+        jPanel3.add(kategoriLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, -1, -1));
+
+        idLabel.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        idLabel.setForeground(new java.awt.Color(0, 0, 0));
+        idLabel.setText("Id : ?");
+        jPanel3.add(idLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Detail Barang");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 0, 900, 600));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -202,14 +206,78 @@ public class Transaksi extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Transaksi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentItemDetailUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Transaksi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentItemDetailUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Transaksi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentItemDetailUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Transaksi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RentItemDetailUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -278,26 +346,74 @@ public class Transaksi extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Transaksi().setVisible(true);
+                RentItemDetailUi ui = new RentItemDetailUi();
+                ui.setLocationRelativeTo(null);
+                ui.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addKeranjangButton;
+    private javax.swing.JTextField beliTextField;
     private javax.swing.JButton btnHomePage;
     private javax.swing.JButton btnLogOut;
     private javax.swing.JButton btnSewa;
     private javax.swing.JButton btnTransaksi;
     private javax.swing.JButton btnTransaksi2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel hargaLabel;
+    private javax.swing.JLabel idLabel;
+    private javax.swing.JLabel imageLabel;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel kategoriLabel;
+    private javax.swing.JLabel namaLabel;
+    private javax.swing.JLabel stokLabel;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void open() {
+        this.setVisible(true);
+    }
+
+    @Override
+    public void setItem(Item item) {
+        idLabel.setText("Id Barang : " + String.valueOf(item.getId()));
+        namaLabel.setText(item.getName());
+        hargaLabel.setText("Harga per Hari : Rp. " + item.getPrice());
+        stokLabel.setText("Stok : " + String.valueOf(item.getStock()));
+        kategoriLabel.setText(item.getCategory());
+// testing : update at dan satunya di edit..
+
+        // testing
+
+        // jika image dalam bentuk path atau URL
+//        ImageIcon icon = new ImageIcon(item.getImage()); // pastikan path valid
+//        Image scaledImage = icon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+//        imageLabel.setIcon(new ImageIcon(scaledImage));
+    }
+
+    @Override
+    public int getCountBeliInput() {
+        return Integer.parseInt(this.beliTextField.getText());
+    }
+
+    @Override
+    public void setCartClickListener(ClickListener listener) {
+        this.addKeranjangButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void showMessage(String message) {
+        JOptionPane.showMessageDialog(this, message);
+    }
+
+    @Override
+    public void close() {
+        this.dispose();
+    }
 }
