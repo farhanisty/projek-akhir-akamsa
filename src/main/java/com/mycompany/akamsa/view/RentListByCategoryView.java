@@ -30,4 +30,9 @@ public interface RentListByCategoryView {
     public void addUpdateClickListener(ClickListener listener);
     
     public void addSewaClickListener(ClickListener listener);
+    
+    public String getSearchInput();
+    public void setSearchInput(String input);
+    
+    public void addSearchClickListener(ClickListener listener);
 }

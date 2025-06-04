@@ -52,8 +52,8 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
         itemTable = new javax.swing.JTable();
         tambahButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        serachTextField = new javax.swing.JTextField();
+        searchButton = new javax.swing.JButton();
         sewaButton = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -94,11 +94,11 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel6.setText("Search");
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        serachTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        jButton3.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
-        jButton3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-search-25.png"))); // NOI18N
+        searchButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
+        searchButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        searchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-search-25.png"))); // NOI18N
 
         sewaButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
         sewaButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -123,9 +123,9 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
                         .addGap(394, 394, 394)
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(serachTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3))
+                        .addComponent(searchButton))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addComponent(tambahButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -139,11 +139,11 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(sewaLabel)
                         .addComponent(jLabel6)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(serachTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -341,14 +341,14 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
     private javax.swing.JButton btnSewa;
     private javax.swing.JButton btnTransaksi;
     private javax.swing.JTable itemTable;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton searchButton;
+    private javax.swing.JTextField serachTextField;
     private javax.swing.JButton sewaButton;
     private javax.swing.JLabel sewaLabel;
     private javax.swing.JButton tambahButton;
@@ -445,5 +445,20 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
     @Override
     public void addSewaClickListener(ClickListener listener) {
         this.sewaButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public String getSearchInput() {
+        return this.serachTextField.getText();
+    }
+
+    @Override
+    public void setSearchInput(String input) {
+        this.serachTextField.setText(input);
+    }
+
+    @Override
+    public void addSearchClickListener(ClickListener listener) {
+        this.searchButton.addActionListener(e -> listener.onClick());
     }
 }
