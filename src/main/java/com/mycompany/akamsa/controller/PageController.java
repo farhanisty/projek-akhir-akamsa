@@ -8,6 +8,7 @@ import com.mycompany.akamsa.presenter.AddItemPresenter;
 import com.mycompany.akamsa.presenter.AdminDashboardPresenter;
 import com.mycompany.akamsa.presenter.CategoryDashboardPresenter;
 import com.mycompany.akamsa.presenter.EditItemPresenter;
+import com.mycompany.akamsa.presenter.LandingPagePresenter;
 import com.mycompany.akamsa.presenter.LoginPresenter;
 import com.mycompany.akamsa.presenter.PurchaseCartPresenter;
 import com.mycompany.akamsa.presenter.RentItemDetailPresenter;
@@ -33,6 +34,7 @@ import com.mycompany.akamsa.view.auth.SignUp;
 import com.mycompany.akamsa.view.ui.AddItem;
 import com.mycompany.akamsa.view.ui.AdminDashboard;
 import com.mycompany.akamsa.view.ui.CategoryDashboardUi;
+import com.mycompany.akamsa.view.ui.LandingPage;
 import com.mycompany.akamsa.view.ui.PurchaseCartUi;
 import com.mycompany.akamsa.view.ui.RentItemDetailUi;
 import com.mycompany.akamsa.view.ui.RentListByCategoryUi;
@@ -68,6 +70,16 @@ public class PageController {
         signUp.setVisible(true);
         
         SignUpPresenter signUpPresenter = new SignUpPresenter(signUp, this.userRepository, this);
+    }
+    
+    public void showLandingPage() {
+        LandingPage view = new LandingPage();
+        
+        SidebarPresenter sidebarPresenter = new SidebarPresenter(view, this);
+        sidebarPresenter.init();
+        
+        LandingPagePresenter presenter = new LandingPagePresenter(view, this);
+        presenter.init();
     }
     
     public void showCategoryDashboard() {

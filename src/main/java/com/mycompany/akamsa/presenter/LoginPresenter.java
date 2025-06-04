@@ -57,7 +57,7 @@ public class LoginPresenter {
                 if(user.getIsAdmin()) {
                     this.pageController.showAdminDashboard();
                 } else {
-                    this.pageController.showCategoryDashboard();
+                    this.pageController.showLandingPage();
                 }
                 
                 

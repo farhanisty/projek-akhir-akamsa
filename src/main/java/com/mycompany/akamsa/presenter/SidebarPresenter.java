@@ -29,6 +29,12 @@ public class SidebarPresenter {
         this.sidebarView.addTransactionPageClickListener(() -> fireTransaction());
         this.sidebarView.addButtonLogOutClickListener(() -> fireLogout());
         this.sidebarView.addHomePageClickListener(() -> fireHomePage());
+        this.sidebarView.addRentPageClickListener(() -> fireRentPage());
+    }
+    
+    private void fireRentPage() {
+        this.sidebarView.close();
+        this.pageController.showCategoryDashboard();
     }
     
     private void fireTransaction() {
@@ -47,7 +53,7 @@ public class SidebarPresenter {
     }
     
     private void fireHomePage() {
-        this.pageController.showCategoryDashboard();
+        this.pageController.showLandingPage();
         this.sidebarView.close();
     }
 }
