@@ -25,12 +25,29 @@ public class SidebarPresenter {
     }
     
     public void initListener() {
-        this.sidebarView.addCartPageClickListener(() -> this.pageController.showTransaction());
+        this.sidebarView.addCartPageClickListener(() -> fireCartPage());
         this.sidebarView.addTransactionPageClickListener(() -> fireTransaction());
+        this.sidebarView.addButtonLogOutClickListener(() -> fireLogout());
+        this.sidebarView.addHomePageClickListener(() -> fireHomePage());
     }
     
     private void fireTransaction() {
         this.pageController.showTransaction();
+        this.sidebarView.close();
+    }
+    
+    private void fireCartPage() {
+        this.pageController.showPurchaseCart();
+        this.sidebarView.close();
+    }
+    
+    private void fireLogout() {
+        this.pageController.showLogin();
+        this.sidebarView.close();
+    }
+    
+    private void fireHomePage() {
+        this.pageController.showCategoryDashboard();
         this.sidebarView.close();
     }
 }
