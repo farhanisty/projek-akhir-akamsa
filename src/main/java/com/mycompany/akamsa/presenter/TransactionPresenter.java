@@ -22,19 +22,10 @@ public class TransactionPresenter {
         this.initTable();
         this.view.open();
         
-        this.initListener();
         
     }
     
     private void initTable() {
         this.view.setTransactionData(this.transactionRepository.getAll());
-    }
-    
-    private void initListener() {
-        this.view.addSearchClickListener(() -> this.onSearch());
-    }
-    
-    private void onSearch() {
-        String searchInput = this.view.getSearchInput();
     }
 }

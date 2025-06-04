@@ -5,13 +5,14 @@
 package com.mycompany.akamsa.view.ui;
 
 import com.mycompany.akamsa.common.ClickListener;
+import com.mycompany.akamsa.view.LandingPageView;
 import com.mycompany.akamsa.view.SidebarView;
 
 /**
  *
  * @author ASUS
  */
-public class LandingPage extends javax.swing.JFrame implements SidebarView {
+public class LandingPage extends javax.swing.JFrame implements SidebarView, LandingPageView {
 
     /**
      * Creates new form nitip
@@ -305,5 +306,25 @@ public class LandingPage extends javax.swing.JFrame implements SidebarView {
     @Override
     public void close() {
         this.dispose();
+    }
+
+    @Override
+    public void open() {
+        this.setVisible(true);
+    }
+
+    @Override
+    public void addSewaClickListener(ClickListener listener) {
+        this.navigateSewaButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void setLoggedUsername(String username) {
+        this.namaLabel.setText("Welcome " + username);
+    }
+
+    @Override
+    public void addTransactionClickListener(ClickListener listener) {
+        this.navigateTransaksiButton.addActionListener(e -> listener.onClick());
     }
 }

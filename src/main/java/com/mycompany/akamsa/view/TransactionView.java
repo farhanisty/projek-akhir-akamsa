@@ -19,9 +19,6 @@ public interface TransactionView {
     
     public void setTransactionData(List<Transaction> transactions);
     
-    public String getSearchInput();
-    
-    public void addSearchClickListener(ClickListener listener);
     
     public void close();
     
