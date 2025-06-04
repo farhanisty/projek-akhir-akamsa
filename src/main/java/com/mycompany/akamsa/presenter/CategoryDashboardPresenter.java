@@ -23,12 +23,12 @@ public class CategoryDashboardPresenter {
     }
     
     private void initListener() {
-        this.categoryDashboardView.addCarrierListener(() -> fireRentListByCategoryView("Carrier"));
-        this.categoryDashboardView.addLightingListener(() -> fireRentListByCategoryView("Carrier"));
-        this.categoryDashboardView.addNavigationListener(() -> fireRentListByCategoryView("Carrier"));
-        this.categoryDashboardView.addTendaListener(() -> fireRentListByCategoryView("Carrier"));
-        this.categoryDashboardView.addToolListener(() -> fireRentListByCategoryView("Carrier"));
-        this.categoryDashboardView.addWearListener(() -> fireRentListByCategoryView("Carrier"));
+        this.categoryDashboardView.addCarrierListener(() -> fireRentListByCategoryView("Carrier dan Tas"));
+        this.categoryDashboardView.addLightingListener(() -> fireRentListByCategoryView("Pencahayaan"));
+        this.categoryDashboardView.addNavigationListener(() -> fireRentListByCategoryView("Navigasi dan Keamanan"));
+        this.categoryDashboardView.addTendaListener(() -> fireRentListByCategoryView("Tenda dan Atributnya"));
+        this.categoryDashboardView.addToolListener(() -> fireRentListByCategoryView("Peralatan/ Perlengkapan"));
+        this.categoryDashboardView.addWearListener(() -> fireRentListByCategoryView("Wears"));
     }
     
     private void fireRentListByCategoryView(String category) {
