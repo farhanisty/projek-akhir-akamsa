@@ -4,6 +4,7 @@
  */
 package com.mycompany.akamsa.controller;
 
+import com.mycompany.akamsa.presenter.AddItemPresenter;
 import com.mycompany.akamsa.presenter.AdminDashboardPresenter;
 import com.mycompany.akamsa.presenter.CategoryDashboardPresenter;
 import com.mycompany.akamsa.presenter.LoginPresenter;
@@ -28,11 +29,13 @@ import com.mycompany.akamsa.view.RentListByCategoryView;
 import com.mycompany.akamsa.view.TransactionView;
 import com.mycompany.akamsa.view.auth.LoginUi;
 import com.mycompany.akamsa.view.auth.SignUp;
+import com.mycompany.akamsa.view.ui.AddItem;
 import com.mycompany.akamsa.view.ui.AdminDashboard;
 import com.mycompany.akamsa.view.ui.CategoryDashboardUi;
 import com.mycompany.akamsa.view.ui.RentItemDetailUi;
 import com.mycompany.akamsa.view.ui.RentListByCategoryUi;
 import com.mycompany.akamsa.view.ui.TransactionUi;
+import com.mycompany.akamsa.view.ui.UpdateItem;
 
 /**
  *
@@ -98,7 +101,7 @@ public class PageController {
     public void showRentListByCategory(String category) {
         RentListByCategoryView view = new RentListByCategoryUi();
         
-        RentListByCategoryPresenter rentListByCategoryPresenter = new RentListByCategoryPresenter(category, view, this.itemRepository);
+        RentListByCategoryPresenter rentListByCategoryPresenter = new RentListByCategoryPresenter(category, view, this.itemRepository, this);
     }
     
     public void showAdminDashboard() {
@@ -106,5 +109,18 @@ public class PageController {
         
         AdminDashboardPresenter presenter = new AdminDashboardPresenter(view, this.userRepository, this);
         presenter.init();
+    }
+    
+    public void showAddItem() {
+        AddItem view = new AddItem();
+        
+        AddItemPresenter presenter = new AddItemPresenter(view, this.itemRepository, this);
+        presenter.init();
+    }
+    
+    public void showEditItem(int id) {
+        UpdateItem view = new UpdateItem();
+        
+        EditItemPresenter presenter = new EditItemPresenter(id, view, this.itemRepository, this);
     }
 }
