@@ -7,6 +7,7 @@ package com.mycompany.akamsa.view.ui;
 import com.mycompany.akamsa.common.ClickListener;
 import com.mycompany.akamsa.view.ItemFormView;
 import com.mycompany.akamsa.view.SidebarView;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -386,79 +387,79 @@ public class UpdateItem extends javax.swing.JFrame implements SidebarView, ItemF
     public void addButtonLogOutClickListener(ClickListener listener) {
         this.btnLogOut.addActionListener(e -> listener.onClick());
     }
-
+    
     @Override
     public void open() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.setVisible(true);
     }
 
     @Override
     public String getIdInput() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.idTextField.getText();
     }
 
     @Override
     public void setIdInput(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.idTextField.setText(id);
     }
 
     @Override
     public String getUsernameInput() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.namaTextField.getText();
     }
 
     @Override
     public void setUsernameInput(String username) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.namaTextField.setText(username);
     }
 
     @Override
     public String getPriceInput() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.hargaTextField.getText();
     }
 
     @Override
     public void setPriceInput(String price) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.hargaTextField.setText(price);
     }
 
     @Override
     public String getStockInput() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.stokTextField.getText();
     }
 
     @Override
     public void setStockInput(String stock) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.stokTextField.setText(stock);
     }
 
     @Override
     public String getCategoryInput() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return (String) this.kategoriComboBox.getSelectedItem();
     }
 
     @Override
     public void setCategoryInput(String category) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.kategoriComboBox.setSelectedItem(category);
     }
 
     @Override
     public String getImageInput() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.imageTextField.getText();
     }
 
     @Override
     public void setImageInput(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.imageTextField.setText(name);
     }
 
     @Override
     public void addActionClickListener(ClickListener listener) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.confirmButton.addActionListener((e) -> listener.onClick());
     }
 
     @Override
     public void showMessage(String message) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        JOptionPane.showMessageDialog(this, message);
     }
 }
