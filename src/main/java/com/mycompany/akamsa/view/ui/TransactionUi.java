@@ -387,17 +387,6 @@ public class TransactionUi extends javax.swing.JFrame implements TransactionView
             });
         }
     }
-
-    @Override
-    public String getSearchInput() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void addSearchClickListener(ClickListener listener) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     @Override
     public void close() {
         this.dispose();
