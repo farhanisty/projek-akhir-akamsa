@@ -6,6 +6,7 @@ package com.mycompany.akamsa.view.ui;
 
 import com.mycompany.akamsa.common.ClickListener;
 import com.mycompany.akamsa.entity.Cart;
+import com.mycompany.akamsa.entity.Item;
 import com.mycompany.akamsa.view.PurchaseCartView;
 import com.mycompany.akamsa.view.SidebarView;
 import java.util.List;
@@ -31,7 +32,7 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
     
     private void setupTable() {
         String[] columns = {
-            "ID", "Item Id", "Transaction Id", "Total"
+            "ID Barang", "Kategori", "Nama Barang", "Harga per Hari", "Total"
         };
 
         DefaultTableModel model = new DefaultTableModel(columns, 0);
@@ -449,10 +450,12 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
         model.setRowCount(0);
 
         for (Cart c : carts) {
+            Item item = c.getItem();
             model.addRow(new Object[]{
-                c.getId(),
-                c.getItem(),
-                c.getTransaction(),
+                item.getId(),
+                item.getCategory(),
+                item.getName(),
+                item.getPrice(),
                 c.getTotal(),
             });
         }
