@@ -29,7 +29,7 @@ public class TransactionRepositoryImpl implements TransactionRepository {
                
         try {
             String sql = "INSERT INTO " + this.tableName + "(cashier_id, customer, number_phone, address, total_price, start_date, end_date) VALUES(?, ?, ?, ?, ?, ?, ?)";
-            st = Connector.getConnection().prepareStatement(sql);
+            st = Connector.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             
             st.setInt(1, transaction.getCashier().getId());
             st.setString(2, transaction.getCustomer());
