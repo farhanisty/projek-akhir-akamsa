@@ -41,6 +41,7 @@ public class AddItemPresenter {
         String stock = this.addView.getStockInput();
         String price = this.addView.getPriceInput();
         String image = this.addView.getImageInput();
+        String category = this.addView.getCategoryInput();
         
         Validator registrationValidator = new StringMustBeNotEmptyValidator(name, "Name is empty");
         registrationValidator
@@ -53,6 +54,7 @@ public class AddItemPresenter {
             item.setName(name);
             item.setPrice(Float.parseFloat(price));
             item.setStock(Integer.parseInt(stock));
+            item.setCategory(category);
             item.setImage(image);
             
             this.itemRepository.insert(item);

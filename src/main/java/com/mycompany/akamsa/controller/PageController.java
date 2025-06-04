@@ -123,5 +123,6 @@ public class PageController {
         UpdateItem view = new UpdateItem();
         
         EditItemPresenter presenter = new EditItemPresenter(id, view, this.itemRepository, this);
+        presenter.init();
     }
 }

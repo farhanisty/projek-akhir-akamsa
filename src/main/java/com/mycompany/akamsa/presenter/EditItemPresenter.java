@@ -32,9 +32,15 @@ public class EditItemPresenter {
     public void init() {
         this.initListener();
         
-        this.addView.open();
-        
         this.item = this.itemRepository.getById(id);
+        
+        this.addView.setIdInput(String.valueOf(id));
+        this.addView.setImageInput(item.getImage());
+        this.addView.setUsernameInput(item.getName());
+        this.addView.setPriceInput(String.valueOf(item.getPrice()));
+        this.addView.setStockInput(String.valueOf(item.getStock()));
+        
+        this.addView.open();
     }
     
     public void initListener() {
@@ -46,6 +52,7 @@ public class EditItemPresenter {
         String stock = this.addView.getStockInput();
         String price = this.addView.getPriceInput();
         String image = this.addView.getImageInput();
+        String category = this.addView.getCategoryInput();
         
         Validator registrationValidator = new StringMustBeNotEmptyValidator(name, "Name is empty");
         registrationValidator
@@ -57,6 +64,7 @@ public class EditItemPresenter {
             item.setPrice(Float.parseFloat(price));
             item.setStock(Integer.parseInt(stock));
             item.setImage(image);
+            item.setCategory(category);
             
             this.itemRepository.update(item);
             
