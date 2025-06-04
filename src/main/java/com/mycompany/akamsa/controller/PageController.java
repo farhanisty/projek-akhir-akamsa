@@ -89,7 +89,10 @@ public class PageController {
     }
     
     public void showRentItemDetail(int id) {
-        RentItemDetailView view = new RentItemDetailUi();
+        RentItemDetailUi view = new RentItemDetailUi();
+        
+        SidebarPresenter sidebarPresenter = new SidebarPresenter(view, this);
+        sidebarPresenter.init();
         RentItemDetailPresenter rentItemDetailPresenter = new RentItemDetailPresenter(id, view, this.itemRepository);
     }
     
