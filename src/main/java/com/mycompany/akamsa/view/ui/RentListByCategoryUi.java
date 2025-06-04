@@ -69,9 +69,11 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(240, 247, 247));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         sewaLabel.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         sewaLabel.setText("Sewa ?Kategori");
+        jPanel3.add(sewaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 38, -1, -1));
 
         itemTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -86,73 +88,37 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
         ));
         jScrollPane1.setViewportView(itemTable);
 
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 96, 785, 415));
+
         tambahButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
         tambahButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         tambahButton.setForeground(new java.awt.Color(255, 255, 255));
         tambahButton.setText("Tambah Barang");
+        jPanel3.add(tambahButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 529, -1, 35));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel6.setText("Search");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 44, -1, -1));
 
         serachTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel3.add(serachTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(626, 43, 147, -1));
 
         searchButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
         searchButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         searchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-search-25.png"))); // NOI18N
+        jPanel3.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 38, -1, 28));
 
         sewaButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
         sewaButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         sewaButton.setForeground(new java.awt.Color(255, 255, 255));
         sewaButton.setText("Sewa");
+        jPanel3.add(sewaButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(717, 529, 99, 35));
 
         updateButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Yellow"));
         updateButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         updateButton.setForeground(new java.awt.Color(255, 255, 255));
         updateButton.setText("Update");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane1)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(sewaLabel)
-                        .addGap(394, 394, 394)
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(serachTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(searchButton))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(tambahButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sewaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(84, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(searchButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(sewaLabel)
-                        .addComponent(jLabel6)
-                        .addComponent(serachTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tambahButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sewaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
-        );
+        jPanel3.add(updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 529, 99, 35));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 0, 900, 600));
 
