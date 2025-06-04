@@ -60,6 +60,7 @@ public class PurchaseCartPresenter {
         transaction.setStartDate(this.purchaseCartView.getStartDateInput());
         transaction.setEndDate(this.purchaseCartView.getEndDateInput());
         transaction.setTotalPrice(CartCache.totalBill());
+        transaction.setNumberPhone(this.purchaseCartView.getPhoneNumberInput());
         
         transaction.setCashier(cashier);
         
