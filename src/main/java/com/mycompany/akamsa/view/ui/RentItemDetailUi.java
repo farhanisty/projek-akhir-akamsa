@@ -71,7 +71,7 @@ public class RentItemDetailUi extends javax.swing.JFrame implements RentItemDeta
 
         jLabel8.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Beli");
+        jLabel8.setText("Sewa");
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 471, -1, -1));
 
         beliTextField.setBackground(new java.awt.Color(255, 255, 255));
