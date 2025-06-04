@@ -7,6 +7,7 @@ package com.mycompany.akamsa.controller;
 import com.mycompany.akamsa.presenter.AddItemPresenter;
 import com.mycompany.akamsa.presenter.AdminDashboardPresenter;
 import com.mycompany.akamsa.presenter.CategoryDashboardPresenter;
+import com.mycompany.akamsa.presenter.EditItemPresenter;
 import com.mycompany.akamsa.presenter.LoginPresenter;
 import com.mycompany.akamsa.presenter.PurchaseCartPresenter;
 import com.mycompany.akamsa.presenter.RentItemDetailPresenter;
