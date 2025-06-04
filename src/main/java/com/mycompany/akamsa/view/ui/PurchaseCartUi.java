@@ -107,10 +107,10 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
         jLabel11.setText("Mulai Pada :");
 
         tanggalMulaiComboBox.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        tanggalMulaiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        tanggalMulaiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
         bulanMulaiComboBox.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        bulanMulaiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" }));
+        bulanMulaiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
         tahunMulaiTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
@@ -118,10 +118,10 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
         jLabel14.setText("Berakhir Pada :");
 
         tanggalBerakhirComboBox.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        tanggalBerakhirComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        tanggalBerakhirComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
         bulanBerakhirComboBox.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        bulanBerakhirComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" }));
+        bulanBerakhirComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
         tahunBerakhirTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
