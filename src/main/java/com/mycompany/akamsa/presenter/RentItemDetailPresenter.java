@@ -41,6 +41,10 @@ public class RentItemDetailPresenter {
         
         Cart cart = new Cart();
         
+        if(total > item.getStock()) {
+            this.rentItemDetailView.showMessage("Input total more than stock!");
+            return;
+        }
         cart.setItem(item);
         cart.setTotal(total);
         
