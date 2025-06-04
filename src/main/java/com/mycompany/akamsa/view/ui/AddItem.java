@@ -61,58 +61,40 @@ public class AddItem extends javax.swing.JFrame implements SidebarView, ItemForm
         jPanel3.setBackground(new java.awt.Color(240, 247, 247));
 
         jLabel1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Add Item");
 
         namaLabel2.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        namaLabel2.setForeground(new java.awt.Color(0, 0, 0));
         namaLabel2.setText("Id : ");
 
         idTextField.setEditable(false);
         idTextField.setBackground(new java.awt.Color(255, 255, 255));
         idTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        idTextField.setForeground(new java.awt.Color(0, 0, 0));
 
         namaLabel3.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        namaLabel3.setForeground(new java.awt.Color(0, 0, 0));
         namaLabel3.setText("Nama Barang :");
 
-        namaTextField.setBackground(new java.awt.Color(255, 255, 255));
         namaTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        namaTextField.setForeground(new java.awt.Color(0, 0, 0));
 
         namaLabel4.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        namaLabel4.setForeground(new java.awt.Color(0, 0, 0));
         namaLabel4.setText("Harga per Hari :");
 
-        hargaTextField.setBackground(new java.awt.Color(255, 255, 255));
         hargaTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        hargaTextField.setForeground(new java.awt.Color(0, 0, 0));
 
         namaLabel5.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        namaLabel5.setForeground(new java.awt.Color(0, 0, 0));
         namaLabel5.setText("Stok :");
 
-        stokTextField.setBackground(new java.awt.Color(255, 255, 255));
         stokTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        stokTextField.setForeground(new java.awt.Color(0, 0, 0));
 
         namaLabel6.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        namaLabel6.setForeground(new java.awt.Color(0, 0, 0));
         namaLabel6.setText("Kategori :");
 
-        kategoriComboBox.setBackground(new java.awt.Color(255, 255, 255));
         kategoriComboBox.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        kategoriComboBox.setForeground(new java.awt.Color(0, 0, 0));
         kategoriComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tenda dan Atributnya", "Wears", "Carrier dan Tas", "Peralatan/ Perlengkapan", "Pencahayaan", "Navigasi dan Keamanan" }));
 
         namaLabel1.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
-        namaLabel1.setForeground(new java.awt.Color(0, 0, 0));
         namaLabel1.setText("Image : ");
 
-        imageTextField.setBackground(new java.awt.Color(255, 255, 255));
         imageTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        imageTextField.setForeground(new java.awt.Color(0, 0, 0));
 
         confirmButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Green"));
         confirmButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -201,11 +183,13 @@ public class AddItem extends javax.swing.JFrame implements SidebarView, ItemForm
 
         btnHomePage.setBackground(new java.awt.Color(5, 54, 44));
         btnHomePage.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnHomePage.setForeground(new java.awt.Color(255, 255, 255));
         btnHomePage.setText("Home Page");
         jPanel2.add(btnHomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 200, 40));
 
         btnPurchaseCart.setBackground(new java.awt.Color(5, 54, 44));
         btnPurchaseCart.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnPurchaseCart.setForeground(new java.awt.Color(255, 255, 255));
         btnPurchaseCart.setText("Purchase Cart");
         btnPurchaseCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -216,6 +200,7 @@ public class AddItem extends javax.swing.JFrame implements SidebarView, ItemForm
 
         btnSewa.setBackground(new java.awt.Color(5, 54, 44));
         btnSewa.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnSewa.setForeground(new java.awt.Color(255, 255, 255));
         btnSewa.setText("Sewa");
         btnSewa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -226,6 +211,7 @@ public class AddItem extends javax.swing.JFrame implements SidebarView, ItemForm
 
         btnLogOut.setBackground(new java.awt.Color(5, 54, 44));
         btnLogOut.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnLogOut.setForeground(new java.awt.Color(255, 255, 255));
         btnLogOut.setText("Log Out");
         btnLogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,6 +222,7 @@ public class AddItem extends javax.swing.JFrame implements SidebarView, ItemForm
 
         btnTransaksi.setBackground(new java.awt.Color(5, 54, 44));
         btnTransaksi.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnTransaksi.setForeground(new java.awt.Color(255, 255, 255));
         btnTransaksi.setText("Transaksi");
         btnTransaksi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
