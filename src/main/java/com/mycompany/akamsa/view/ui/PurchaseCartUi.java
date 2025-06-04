@@ -285,11 +285,13 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
 
         btnHomePage.setBackground(new java.awt.Color(5, 54, 44));
         btnHomePage.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnHomePage.setForeground(new java.awt.Color(255, 255, 255));
         btnHomePage.setText("Home Page");
         jPanel2.add(btnHomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 200, 40));
 
         btnPurchaseCart.setBackground(new java.awt.Color(5, 54, 44));
         btnPurchaseCart.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnPurchaseCart.setForeground(new java.awt.Color(255, 255, 255));
         btnPurchaseCart.setText("Purchase Cart");
         btnPurchaseCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -300,6 +302,7 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
 
         btnSewa.setBackground(new java.awt.Color(5, 54, 44));
         btnSewa.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnSewa.setForeground(new java.awt.Color(255, 255, 255));
         btnSewa.setText("Sewa");
         btnSewa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -310,6 +313,7 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
 
         btnLogOut.setBackground(new java.awt.Color(5, 54, 44));
         btnLogOut.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnLogOut.setForeground(new java.awt.Color(255, 255, 255));
         btnLogOut.setText("Log Out");
         btnLogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -320,6 +324,7 @@ public class PurchaseCartUi extends javax.swing.JFrame implements PurchaseCartVi
 
         btnTransaksi.setBackground(new java.awt.Color(5, 54, 44));
         btnTransaksi.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnTransaksi.setForeground(new java.awt.Color(255, 255, 255));
         btnTransaksi.setText("Transaksi");
         btnTransaksi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

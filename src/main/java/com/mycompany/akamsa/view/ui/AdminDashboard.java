@@ -200,6 +200,7 @@ public class AdminDashboard extends javax.swing.JFrame implements AdminDashboard
 
         btnLogOut.setBackground(new java.awt.Color(5, 54, 44));
         btnLogOut.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        btnLogOut.setForeground(new java.awt.Color(255, 255, 255));
         btnLogOut.setText("Log Out");
         btnLogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
