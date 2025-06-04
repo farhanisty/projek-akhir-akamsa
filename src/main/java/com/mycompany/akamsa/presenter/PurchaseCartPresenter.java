@@ -11,6 +11,11 @@ import com.mycompany.akamsa.entity.Cart;
 import com.mycompany.akamsa.entity.Transaction;
 import com.mycompany.akamsa.entity.User;
 import com.mycompany.akamsa.exception.RepositoryException;
+import com.mycompany.akamsa.helper.validator.FailedValidatorStatus;
+import com.mycompany.akamsa.helper.validator.StringMustBeEqualsValidator;
+import com.mycompany.akamsa.helper.validator.StringMustBeNotEmptyValidator;
+import com.mycompany.akamsa.helper.validator.Validator;
+import com.mycompany.akamsa.helper.validator.ValidatorStatus;
 import com.mycompany.akamsa.repository.cart.CartRepository;
 import com.mycompany.akamsa.repository.transaction.TransactionRepository;
 import com.mycompany.akamsa.view.PurchaseCartView;
@@ -54,6 +59,27 @@ public class PurchaseCartPresenter {
         Transaction transaction = new Transaction();
         User cashier = Auth.getUser();
         List<Cart> carts = CartCache.getCarts();
+        
+        String customer = this.purchaseCartView.getNameInput();;
+        String startDate = this.purchaseCartView.getStartDateInput();
+        String endDate = this.purchaseCartView.getEndDateInput();
+        
+        Validator registrationValidator = new StringMustBeNotEmptyValidator(customer, "Customer is empty");
+        registrationValidator
+                .setNext(new StringMustBeNotEmptyValidator(startDate, "Start date is empty"))
+                .setNext(new StringMustBeNotEmptyValidator(endDate, "End date is empty"));
+        
+        ValidatorStatus validatorStatus = registrationValidator.check();
+        
+        if(validatorStatus instanceof FailedValidatorStatus) {
+            this.purchaseCartView.showMessage(validatorStatus.getMessage());
+            return;
+        }
+        
+        if(CartCache.getCarts().isEmpty()) {
+            this.purchaseCartView.showMessage("Carts is empty");
+            return;
+        }
         
         transaction.setCustomer(this.purchaseCartView.getNameInput());
         transaction.setAddress(this.purchaseCartView.getAddressInput());
