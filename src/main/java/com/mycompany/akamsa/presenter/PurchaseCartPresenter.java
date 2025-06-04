@@ -6,6 +6,7 @@ package com.mycompany.akamsa.presenter;
 
 import com.mycompany.akamsa.common.Auth;
 import com.mycompany.akamsa.common.CartCache;
+import com.mycompany.akamsa.controller.PageController;
 import com.mycompany.akamsa.entity.Cart;
 import com.mycompany.akamsa.entity.Transaction;
 import com.mycompany.akamsa.entity.User;
@@ -23,11 +24,13 @@ public class PurchaseCartPresenter {
     PurchaseCartView purchaseCartView;
     TransactionRepository transactionRepository;
     CartRepository cartRepository;
+    PageController pageController;
 
-    public PurchaseCartPresenter(PurchaseCartView purchaseCartView, TransactionRepository transactionRepository, CartRepository cartRepository) {
+    public PurchaseCartPresenter(PurchaseCartView purchaseCartView, TransactionRepository transactionRepository, CartRepository cartRepository, PageController pageController) {
         this.purchaseCartView = purchaseCartView;
         this.transactionRepository = transactionRepository;
         this.cartRepository = cartRepository;
+        this.pageController = pageController;
         
         this.purchaseCartView.open();
         this.init();
@@ -74,6 +77,8 @@ public class PurchaseCartPresenter {
             CartCache.clear();
             
             this.purchaseCartView.close();
+            
+            this.pageController.showTransaction();
             
         } catch(RepositoryException e) {
             this.purchaseCartView.showMessage(e.getMessage());

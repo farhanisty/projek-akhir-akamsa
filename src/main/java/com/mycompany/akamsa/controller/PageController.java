@@ -85,7 +85,7 @@ public class PageController {
         SidebarPresenter sidebarPresenter = new SidebarPresenter(purchaseCartView, this);
         sidebarPresenter.init();
         
-        PurchaseCartPresenter purchaseCartPresenter = new PurchaseCartPresenter(purchaseCartView, this.transactionRepository, this.cartRepository);
+        PurchaseCartPresenter purchaseCartPresenter = new PurchaseCartPresenter(purchaseCartView, this.transactionRepository, this.cartRepository, this);
     }
     
     public void showRentItemDetail(int id) {
