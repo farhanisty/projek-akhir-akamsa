@@ -431,4 +431,19 @@ public class RentListByCategoryUi extends javax.swing.JFrame implements RentList
     public void addButtonLogOutClickListener(ClickListener listener) {
         this.btnLogOut.addActionListener(e -> listener.onClick());
     }
+
+    @Override
+    public void addTambahClickListener(ClickListener listener) {
+        this.tambahButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addUpdateClickListener(ClickListener listener) {
+        this.updateButton.addActionListener(e -> listener.onClick());
+    }
+
+    @Override
+    public void addSewaClickListener(ClickListener listener) {
+        this.sewaButton.addActionListener(e -> listener.onClick());
+    }
 }
