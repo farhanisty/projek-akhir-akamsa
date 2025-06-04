@@ -48,7 +48,13 @@ public class LoginPresenter {
                 this.loginView.showMessage("Login Berhasil");
                 this.loginView.close();
                 
-                this.pageController.showCategoryDashboard();
+                if(user.getIsAdmin()) {
+                    this.pageController.showAdminDashboard();
+                } else {
+                    this.pageController.showCategoryDashboard();
+                }
+                
+                
             } else {
                 throw new EntityNotFoundException("username or password not match credentials", new Throwable());
             }

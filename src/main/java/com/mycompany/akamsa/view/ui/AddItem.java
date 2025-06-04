@@ -5,13 +5,15 @@
 package com.mycompany.akamsa.view.ui;
 
 import com.mycompany.akamsa.common.ClickListener;
+import com.mycompany.akamsa.view.ItemFormView;
 import com.mycompany.akamsa.view.SidebarView;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author ASUS
  */
-public class AddItem extends javax.swing.JFrame implements SidebarView {
+public class AddItem extends javax.swing.JFrame implements SidebarView, ItemFormView {
 
     /**
      * Creates new form LandingPage
@@ -368,5 +370,80 @@ public class AddItem extends javax.swing.JFrame implements SidebarView {
     @Override
     public void close() {
         this.dispose();
+    }
+
+    @Override
+    public void open() {
+        this.setVisible(true);
+    }
+
+    @Override
+    public String getIdInput() {
+        return this.idTextField.getText();
+    }
+
+    @Override
+    public void setIdInput(String id) {
+        this.idTextField.setText(id);
+    }
+
+    @Override
+    public String getUsernameInput() {
+        return this.namaTextField.getText();
+    }
+
+    @Override
+    public void setUsernameInput(String username) {
+        this.namaTextField.setText(username);
+    }
+
+    @Override
+    public String getPriceInput() {
+        return this.hargaTextField.getText();
+    }
+
+    @Override
+    public void setPriceInput(String price) {
+        this.hargaTextField.setText(price);
+    }
+
+    @Override
+    public String getStockInput() {
+        return this.stokTextField.getText();
+    }
+
+    @Override
+    public void setStockInput(String stock) {
+        this.stokTextField.setText(stock);
+    }
+
+    @Override
+    public String getCategoryInput() {
+        return (String) this.kategoriComboBox.getSelectedItem();
+    }
+
+    @Override
+    public void setCategoryInput(String category) {
+        this.kategoriComboBox.setSelectedItem(category);
+    }
+
+    @Override
+    public String getImageInput() {
+        return this.imageTextField.getText();
+    }
+
+    @Override
+    public void setImageInput(String name) {
+        this.imageTextField.setText(name);
+    }
+
+    @Override
+    public void addActionClickListener(ClickListener listener) {
+        this.confirmButton.addActionListener((e) -> listener.onClick());
+    }
+
+    @Override
+    public void showMessage(String message) {
+        JOptionPane.showMessageDialog(this, message);
     }
 }
