@@ -33,6 +33,7 @@ import com.mycompany.akamsa.view.auth.SignUp;
 import com.mycompany.akamsa.view.ui.AddItem;
 import com.mycompany.akamsa.view.ui.AdminDashboard;
 import com.mycompany.akamsa.view.ui.CategoryDashboardUi;
+import com.mycompany.akamsa.view.ui.PurchaseCartUi;
 import com.mycompany.akamsa.view.ui.RentItemDetailUi;
 import com.mycompany.akamsa.view.ui.RentListByCategoryUi;
 import com.mycompany.akamsa.view.ui.TransactionUi;
@@ -80,9 +81,11 @@ public class PageController {
     }
     
     public void showPurchaseCart() {
-        PurchaseCartView purchaseCartView = null;
-        PurchaseCartPresenter purchaseCartPresenter = new PurchaseCartPresenter(purchaseCartView, this.transactionRepository, this.cartRepository);
+        PurchaseCartUi purchaseCartView = new PurchaseCartUi();
+        SidebarPresenter sidebarPresenter = new SidebarPresenter(purchaseCartView, this);
+        sidebarPresenter.init();
         
+        PurchaseCartPresenter purchaseCartPresenter = new PurchaseCartPresenter(purchaseCartView, this.transactionRepository, this.cartRepository);
     }
     
     public void showRentItemDetail(int id) {
@@ -100,7 +103,10 @@ public class PageController {
     }
     
     public void showRentListByCategory(String category) {
-        RentListByCategoryView view = new RentListByCategoryUi();
+        RentListByCategoryUi view = new RentListByCategoryUi();
+        
+        SidebarPresenter sidebarPresenter = new SidebarPresenter(view, this);
+        sidebarPresenter.init();
         
         RentListByCategoryPresenter rentListByCategoryPresenter = new RentListByCategoryPresenter(category, view, this.itemRepository, this);
     }
@@ -115,6 +121,9 @@ public class PageController {
     public void showAddItem() {
         AddItem view = new AddItem();
         
+        SidebarPresenter sidebarPresenter = new SidebarPresenter(view, this);
+        sidebarPresenter.init();
+        
         AddItemPresenter presenter = new AddItemPresenter(view, this.itemRepository, this);
         presenter.init();
     }
@@ -122,6 +131,10 @@ public class PageController {
     public void showEditItem(int id) {
         UpdateItem view = new UpdateItem();
         
+        SidebarPresenter sidebarPresenter = new SidebarPresenter(view, this);
+        sidebarPresenter.init();
+        
         EditItemPresenter presenter = new EditItemPresenter(id, view, this.itemRepository, this);
+        presenter.init();
     }
 }
