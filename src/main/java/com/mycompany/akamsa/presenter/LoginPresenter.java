@@ -44,6 +44,12 @@ public class LoginPresenter {
             User user = this.userRepository.getByUsername(username);
             
             if(PasswordHelper.verifyPassword(password, user.getPassword())) {
+                
+                if(!user.getIsVerified()) {
+                    this.loginView.showMessage("Your account is not verifed yet");
+                    return;
+                }
+                
                 Auth.setUser(user);
                 this.loginView.showMessage("Login Berhasil");
                 this.loginView.close();

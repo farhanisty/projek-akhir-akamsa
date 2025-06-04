@@ -24,4 +24,6 @@ public interface ItemRepository {
     public boolean delete(int id) throws RepositoryException;
     
     public List<Item> getByCategory(String category) throws RepositoryException;
+    
+    public List<Item> getByNameAndCategory(String name, String category) throws RepositoryException;
 }

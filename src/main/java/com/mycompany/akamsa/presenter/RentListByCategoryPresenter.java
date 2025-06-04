@@ -37,6 +37,13 @@ public class RentListByCategoryPresenter {
         this.view.addTambahClickListener(() -> this.pageController.showAddItem());
         this.view.addUpdateClickListener(() -> this.onUpdate());
         this.view.addSewaClickListener(() -> this.onSewa());
+        this.view.addSearchClickListener(() -> this.onSearch());
+    }
+    
+    private void onSearch() {
+        String name = this.view.getSearchInput();
+        
+        this.view.setItems(this.itemRepository.getByNameAndCategory(name, category));
     }
     
     private void onUpdate() {

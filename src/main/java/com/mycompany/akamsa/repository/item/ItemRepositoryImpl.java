@@ -221,5 +221,42 @@ public class ItemRepositoryImpl implements ItemRepository {
         
         return items;
     }
+
+    @Override
+    public List<Item> getByNameAndCategory(String name, String category) throws RepositoryException {
+        List<Item> items = new ArrayList<>();
+        String sql = "SELECT * FROM " + this.tableName + " WHERE category = ? AND name LIKE ?";
+        
+        PreparedStatement st = null;
+        
+        try {
+            st = Connector.getConnection().prepareStatement(sql);
+            
+            st.setString(1, category);
+            st.setString(2, "%" + name + "%");
+            
+            ResultSet rs = st.executeQuery();
+            
+            while(rs.next()) {
+                Item item = new Item();
+                
+                item.setId(rs.getInt("id"));
+                item.setName(rs.getString("name"));
+                item.setPrice(rs.getFloat("price"));
+                item.setStock(rs.getInt("stock"));
+                item.setCategory(rs.getString("category"));
+                item.setImage(rs.getString("image"));
+                item.setUpdatedAt(rs.getString("updated_at"));
+                item.setCreatedAt(rs.getString("created_at"));
+                
+                items.add(item);
+            }
+        } catch (SQLException ex) {
+            throw new RepositoryException(ex.getMessage(), ex);
+        }
+        
+        return items;
+    }
+    
     
 }
